@@ -1,0 +1,23 @@
+<ion-header color='primary'>
+    <ion-navbar color='primary'>
+        <ion-title> {{'Listeagencepage.namepage' | translate }} </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header">
+    <div *ngIf="!iserror">
+        <ion-list id="iditem">
+            <!--  <ion-list-header id="idhead">
+                {{'Listeagencepage.nameagence' | translate }}
+            </ion-list-header>-->
+            <ion-item *ngFor=" let b of branche" id="idlist" (click)="itemTaped(b)">
+                <h1 class="h1">{{b.name}}</h1>
+
+            </ion-item>
+
+        </ion-list>
+    </div>
+    <div *ngIf="iserror">
+        <label style="color:white"> {{'Divers.errortext' | translate }} </label> <button ion-button clear style="color:red" (tap)="getAgence()">{{'Divers.errorbuton' | translate }}</button>
+    </div>
+</ion-content>

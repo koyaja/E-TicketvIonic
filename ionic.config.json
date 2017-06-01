@@ -1,0 +1,16 @@
+{
+  "name": "E-TicketvIonic",
+  "app_id": "3639a903",
+  "v2": true,
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/api/",
+      "proxyUrl": "http://192.168.0.137:9090/MobileTicket/"
+    },
+    {
+      "path": "/api2/",
+      "proxyUrl": "http://192.168.0.137:8080/api/clients/sign/"
+    }
+  ]
+}

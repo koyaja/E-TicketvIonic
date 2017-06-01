@@ -1,0 +1,45 @@
+<ion-header>
+
+    <ion-navbar color='primary'>
+        <ion-toolbar color='primary'>
+            <ion-title> {{'Homepage.titles' | translate }}</ion-title>
+            <ion-buttons end>
+                <button ion-button icon-only (click)="presentPopover($event)">
+                    <ion-icon name="more" item-right ></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-navbar>
+</ion-header>
+<ion-content class="has-header">
+    <div>
+        <p id="titre"><strong> {{'Homepage.bienvenu' | translate }}</strong></p>
+    </div>
+    <div>
+        <button id="taketicket" (tap)="passnew()" ion-button icon-right>
+        {{'Homepage.Bpriseticket' | translate }}
+        <ion-icon name="ios-arrow-forward-outline" id="icon1" class="icon-right"></ion-icon>
+    </button>
+        <br>
+
+        <button id="taketicket" ion-button icon-right button-calm>
+  {{'Homepage.Bpriserdv' | translate }}
+   <ion-icon name="ios-arrow-forward-outline" id="icon1" class="icon-right"></ion-icon>
+  </button><br>
+
+        <!-- <button id="taketicket" ion-button icon-right (tap)="showServices()">
+   {{'Homepage.Bsclient' | translate }}
+   <ion-icon name="ios-arrow-forward-outline" class="icon-right"></ion-icon>
+  </button><br>
+   <button id="taketicket" ion-button icon-right (tap)="parametreshow()">
+ {{'Homepage.Bsetting' | translate }}
+   <ion-icon name="ios-arrow-forward-outline" class="icon-right" ></ion-icon>
+  </button>
+  -->
+        <button id="taketicket" ion-button icon-right (tap)="showMarketing()">
+   {{'Homepage.Bmarketing' | translate }}
+   <ion-icon name="ios-arrow-forward-outline" class="icon-right"></ion-icon>
+  </button> <br>
+
+    </div>
+</ion-content>

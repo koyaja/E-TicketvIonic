@@ -1,0 +1,125 @@
+page-service {
+    /* .has-header {
+        background-image: url(../assets/icon/bkg.png);
+    }*/
+    #idavatar {
+        display: block;
+        background-color: #026D93;
+        color: white;
+        padding: 0;
+        margin: 0;
+    }
+    .h1 {
+        display: block;
+        text-align: center;
+        padding: auto;
+        margin: 17px;
+    }
+    #iditem {
+        opacity: 0.6;
+        background-color: transparent;
+        color: transparent;
+        margin: -15px;
+    }
+    #idhead {
+        color: blue;
+        display: block;
+        text-align: center;
+        margin: 10px;
+        background-color: white;
+        font-size: 20px;
+        padding: 0px;
+    }
+    //  background-image: url("../img/newbkg.png");
+    /*  #taketicket {
+        color: black;
+        background-color: white;
+        // margin: 20px auto;
+        display: block;
+        size: 50px;
+        padding: 10px auto 10px auto;
+        margin: 10px auto;
+        width: 85%;
+        height: 50px;
+        text-align: center;
+        //font-size-adjust: 0.58;
+        //text-align: left;
+        // padding-right:10px;
+        // margin: 10px 10px 10px 10px;
+    }
+    #icon1 {
+        align-content: right;
+    }
+    .icon-right {
+        position: absolute;
+        right: 25px;
+        size: normal;
+        color: red;
+    }
+    #titre {
+        display: block;
+        font-size: 20px;
+        padding: 10px auto;
+        margin: 44px auto;
+        text-align: center;
+        color: white;
+    }
+    #bntq {
+        display: block;
+        padding: 25px;
+        margin: 34px auto;
+        width: 300px;
+    }*/
+    #idlist {
+        //padding: 10px auto;
+        //margin: 10px auto;
+        width: 80%;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        height: 50%;
+        //margin-left: 10px;
+        //margin-right: 10px;
+    }
+    .customer-waiting {
+        margin-left: auto;
+        margin-right: 10px;
+        display: block;
+    }
+    .customer-icon {
+        width: 20px;
+        vertical-align: sub;
+        stroke: #303030;
+        padding: 1px;
+    }
+    .customer-icon {
+        width: 20px;
+        vertical-align: sub;
+        stroke: #303030;
+        padding: 1px;
+    }
+    .tick-container {
+        position: absolute;
+        right: 1.5em;
+        top: 34%
+    }
+    svg.tick {
+        position: relative;
+        top: 2px;
+        width: 18px;
+        visibility: hidden;
+    }
+    .tick-container-rtl {
+        position: absolute;
+        left: 18px;
+        top: 28%;
+    }
+    @media (max-width: 450px) {
+        .tick-container-rtl {
+            position: absolute;
+            left: 1.5em;
+            top: 34%
+        }
+    }
+}

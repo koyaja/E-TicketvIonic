@@ -1,0 +1,105 @@
+<ion-header color='primary'>
+    <ion-navbar color='primary'>
+        <ion-title>
+            {{'Showticketpage.namepage' | translate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="has-header">
+    <h3 id="textwelcome"> {{branchename}} </h3>
+    <h3 id="textwelcome" *ngIf="!iscalled && !isticketfinish"> {{'Showticketpage.note' | translate}} </h3>
+
+    <div *ngIf="showrang() && !iscalled && !isticketfinish">
+        <div *ngFor="let num of fakeArray; let i = index" class="col center-text queue-itm parent-center" [ngClass]="{ selected:SelctedPosition(num), other:!SelctedPosition(num), animselected:animatePosition(num)}">
+            <div [ngClass]="{'child-center': true, 'center-content' : !hilightSelcted}">
+                <div class="box  ellipsis  reverse-ellipsis content-container-one">
+                    <div class="ellipsis__content">{{num}}</div>
+                </div>
+            </div>
+            <div *ngIf="SelctedPosition(num)" class="content-container-two">
+                <div class="ellipsis__content">{{'Showticketpage.yourposition' | translate}}</div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="iscalled && !isticketfinish">
+        <ion-label class="guichet">{{'Showticketpage.yourturn' | translate}} {{guichet}} </ion-label>
+    </div>
+
+
+
+
+
+
+
+    <!-- <div class="button-bar scroll-horiz" *ngFor="let Agence of Agences">
+
+        <a button button-positive id="listhz">{{Agence.ordre}}</a>
+
+
+    </div>
+
+    <ion-item>
+        <ion-scroll scrollX style="height: 50px;" class="ion-scroll">
+            <ion-list>
+                <ion-item *ngFor="let Agence of Agences">
+                    <h1>{{Agence.ordre}}</h1>
+                </ion-item>
+            </ion-list>
+        </ion-scroll>
+    </ion-item>
+    -->
+    <!--  <ion-list scroll="false">
+        <ion-item>
+
+            <ion-scroll id="scrolll" *ngFor="let Agence of Agences let i=index">
+                {{Agence.ordre}}
+                <div *ngFor="let Agence of Agences let i=index" style='display: inline-block; margin: 10px; background-color: red'>
+                    <ion-icon name="ios-arrow-forward-outline" class="icon-right"></ion-icon>
+                    <i style='font-size: 30px;'></i> {{Agence.ordre}}
+                    <br>
+                    <br>
+                </div>
+            </ion-scroll>
+        </ion-item>
+    </ion-list>
+    <div>
+        <ion-navbar>
+            <button> </button>
+
+        </ion-navbar>
+        <span id="txt"> {{sernam}}</span>
+        <div id="pa" class="content">
+
+            <label id="num">
+    {{ticnum}}
+   </label>
+        </div>
+    </div>-->
+
+    <div *ngIf="!isticketfinish" class="ticket_container ticket_info parent-center parent-center:before">
+        <div class="child-center">
+
+            <div class="sub-heading-text-2 ticket-service-name"> {{sernam}} </div>
+            <div class="fadeIn ticket-text ticket-size-6 ticket_nmbr"> {{ticketNumber}}</div>
+        </div>
+    </div>
+    <button *ngIf="!iscalled" ion-button color="danger" round id="bntq" (tap)='Cancelvisite()'>{{'Showticketpage.cancelviste' | translate}}</button>
+    <div *ngIf="iserror && !isticketfinish">
+        <label color="white">Une erreur s'est produite </label> <button ion-button clear (tap)="gevisitstatus(branchId, visitId,checksum);">Réessayer</button>
+    </div>
+    <div *ngIf="isticketfinish">
+        <div class="fvisit">
+            <ion-range min="-100" step="10" snaps="true" [(ngModel)]="text">
+                <ion-label range-left class="small-text">A</ion-label>
+                <ion-label range-right>A</ion-label>
+            </ion-range>
+            <label class="labfin center">
+    Merci Pour votre visite
+       </label>
+            <div class="fbutton">
+                <button ion-button class="new" (tap)="home()">Prendre nouveau Ticket</button>
+                <button ion-button outline class="feed">Feed back</button> </div>
+        </div>
+    </div>
+</ion-content>
