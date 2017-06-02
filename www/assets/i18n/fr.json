@@ -1,8 +1,8 @@
 {
     "Homepage": {
-        "bienvenu": " Bienvenue dans E-Ticket",
+        "bienvenu": "Veuillez choisir une opération",
         "Bpriseticket": "Prise de Ticket",
-        "Bpriserdv": "Prise de de Rendez-vous",
+        "Bpriserdv": "Prise de Rendez-vous",
         "Bsclient": "Service client",
         "Bmarketing": "Context marketing",
         "Bsetting": "Parametre",
@@ -11,24 +11,23 @@
     },
 
     "Servicepage": {
-        "nameservice": " SERVICES",
-        "Bpriseticket": "Prise de Ticket",
-        "titles": "E-Ticket Services"
+        "nameservice": "Veuillez choisir un service",
+        "titles": "Liste des services"
 
     },
     "Listeagencepage": {
-        "nameagence": " AGENCES",
-        "namepage": "Agences Disponible"
+        "nameagence": " Veuillez choisir une agence",
+        "namepage": "Liste des agences"
 
     },
     "Showticketpage": {
         "cancelviste": " Annuler le Ticket",
         "Bpriseticket": "Prise de Ticket",
         "yourposition": "Vous",
-        "note": "SVP Veuillez Patientiez...  ",
+        "note": "Veuillez patientiez...  ",
         "namepage": "Votre Place est ",
         "notewelcom": "Bienvenue à",
-        "yourturn": "veillez passez au"
+        "yourturn": "Veuillez passez au"
 
     },
     "Contactpage": {
@@ -44,7 +43,7 @@
         "titlenotif": "Notification",
         "titlecancel": "Annuler la visite",
         "massagenofif": "Vous ete attendu au ",
-        "massagecancel": "Voulez-vous vrament annuler votre Ticket ?",
+        "massagecancel": "Voulez-vous vrament annuler votre ticket ?",
         "oknotif": "ok",
         "cancelbuttonnotif": "non",
         "okcancel": "Oui"

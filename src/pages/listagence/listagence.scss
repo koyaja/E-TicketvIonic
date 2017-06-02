@@ -1,37 +1,37 @@
-page-listagence {
-    /* .has-header {
+    page-listagence {
+        /* .has-header {
         background-image: url(../assets/icon/bkg.png);
     }*/
-    #idavatar {
-        display: block;
-        background-color: #026D93;
-        color: white;
-        padding: 0;
-        margin: 0;
-    }
-    .h1 {
-        display: block;
-        text-align: center;
-        padding: auto;
-        margin: 17px;
-    }
-    #iditem {
-        opacity: 0.6;
-        background-color: transparent;
-        color: transparent;
-        margin: -15px;
-    }
-    #idhead {
-        color: blue;
-        display: block;
-        text-align: center;
-        margin: 10px;
-        background-color: white;
-        font-size: 30px;
-        padding: 10px;
-    }
-    //  background-image: url("../img/newbkg.png");
-    /*  #taketicket {
+        #idavatar {
+            display: block;
+            background-color: #026D93;
+            color: white;
+            padding: 0;
+            margin: 0;
+        }
+        .h1 {
+            display: block;
+            text-align: center;
+            padding: auto;
+            margin: 17px;
+        }
+        #iditem {
+            opacity: 0.6;
+            background-color: transparent;
+            color: transparent;
+            // margin: -15px;
+        }
+        #idhead {
+            color: blue;
+            display: block;
+            text-align: center;
+            margin: 10px;
+            background-color: white;
+            font-size: 30px;
+            padding: 10px;
+        }
+        //  background-image: url("../img/newbkg.png");
+        /*  #taketicket {
         color: black;
         background-color: white;
         // margin: 20px auto;
@@ -70,12 +70,68 @@ page-listagence {
         margin: 34px auto;
         width: 300px;
     }*/
-    #idlist {
-        width: 80%;
-        display: block;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
+        #idlist {
+            width: 80%;
+            display: block;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .titre {
+            display: block;
+            font-size: 20px;
+            padding: 10px auto;
+            margin: 20px auto;
+            text-align: center;
+            color: black;
+            //  font-family: 'Nanami-Rounded-Medium'
+        }
+        #titre {
+            display: block;
+            font-size: 20px;
+            padding: 10px auto;
+            margin: 20px auto;
+            text-align: center;
+            color: white;
+            // background: transparent !important;
+            //  font-family: 'Nanami-Rounded-Medium'
+        }
+        // gestion erreur css
+        /* .errordiv {
+            //  display: inline-block;
+            // display: table-cell;
+            margin-left: auto;
+            margin-right: auto;
+            align-content: center;
+            padding: 25px;
+            display: block;
+        }
+        .errordiv label {
+            text-align: center;
+            margin-top: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            padding: auto;
+            align-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        .laberror {
+            font-size: 20px;
+            color: white;
+        }
+        #bntq {
+            display: block;
+            padding: 25px;
+            margin: 34px auto;
+            width: 250px;
+            font-family: Helvetica;
+        }
+        #global {
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+        }*/
     }
-}

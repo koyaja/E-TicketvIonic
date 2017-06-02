@@ -19,7 +19,7 @@ page-service {
         opacity: 0.6;
         background-color: transparent;
         color: transparent;
-        margin: -15px;
+        // margin: -15px;
     }
     #idhead {
         color: blue;
@@ -121,5 +121,14 @@ page-service {
             left: 1.5em;
             top: 34%
         }
+    }
+    #titre {
+        display: block;
+        font-size: 20px;
+        padding: 10px auto;
+        // margin: 20px auto;
+        text-align: center;
+        color: white;
+        //  font-family: 'Nanami-Rounded-Medium'
     }
 }

@@ -1,13 +1,16 @@
 <ion-header color='primary'>
     <ion-navbar color='primary'>
-        <ion-title>
-            {{'Showticketpage.namepage' | translate}}
-        </ion-title>
+        <ion-toolbar color='primary'>
+            <ion-title>
+                <!--  {{'Showticketpage.namepage' | translate}} -->
+                {{branchename}}
+            </ion-title>
+        </ion-toolbar>
     </ion-navbar>
 </ion-header>
 
 <ion-content class="has-header">
-    <h3 id="textwelcome"> {{branchename}} </h3>
+    <!--  <h3 id="textwelcome"> {{branchename}} </h3> -->
     <h3 id="textwelcome" *ngIf="!iscalled && !isticketfinish"> {{'Showticketpage.note' | translate}} </h3>
 
     <div *ngIf="showrang() && !iscalled && !isticketfinish">
@@ -85,21 +88,28 @@
         </div>
     </div>
     <button *ngIf="!iscalled" ion-button color="danger" round id="bntq" (tap)='Cancelvisite()'>{{'Showticketpage.cancelviste' | translate}}</button>
-    <div *ngIf="iserror && !isticketfinish">
-        <label color="white">Une erreur s'est produite </label> <button ion-button clear (tap)="gevisitstatus(branchId, visitId,checksum);">Réessayer</button>
+
+
+    <div *ngIf="iserror && !isticketfinish" class="errordiv" id="global">
+        <label> {{'Divers.errortext' | translate }} </label>
+        <button ion-button round (tap)="gevisitstatus(branchId, visitId,checksum);" id="bntq" color="secondary">{{'Divers.errorbuton' | translate }}</button>
     </div>
     <div *ngIf="isticketfinish">
         <div class="fvisit">
-            <ion-range min="-100" step="10" snaps="true" [(ngModel)]="text">
-                <ion-label range-left class="small-text">A</ion-label>
-                <ion-label range-right>A</ion-label>
-            </ion-range>
+
             <label class="labfin center">
     Merci Pour votre visite
        </label>
+
+            <ion-range min="0" max="10" pin="true" step="1" snaps="true" [(ngModel)]="text">
+                <ion-label range-left class="small-text">0</ion-label>
+                <ion-label range-right>10</ion-label>
+            </ion-range>
+            <ion-label>Dite nous un mot</ion-label>
+            <ion-textarea rows='5'></ion-textarea>
             <div class="fbutton">
-                <button ion-button class="new" (tap)="home()">Prendre nouveau Ticket</button>
-                <button ion-button outline class="feed">Feed back</button> </div>
+                <button ion-button class="new" (tap)="home()">Poster</button>
+                <button ion-button outline class="feed">Ignorer</button> </div>
         </div>
     </div>
 </ion-content>

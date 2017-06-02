@@ -1,11 +1,11 @@
 import { HomePage } from './../pages/home/home';
 import { Component } from '@angular/core';
-import { Platform ,Nav} from 'ionic-angular';
+import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import {Restservice} from './restservice/restservice'
 //import {AgencesEntite} from './restservice/AgenceEntitie'
-import { TabsPage } from '../pages/tabs/tabs';
-import {GeolocalisationPage} from '../pages/geolocalisation/geolocalisation'
+//import { TabsPage } from '../pages/tabs/tabs';
+//import {GeolocalisationPage} from '../pages/geolocalisation/geolocalisation'
 import { Storage } from '@ionic/storage';
 import {TranslateService} from '@ngx-translate/core';
 import { Network } from '@ionic-native/network';
@@ -48,7 +48,7 @@ this.push.rx.notification()
 
 
       StatusBar.styleDefault();
-     // Splashscreen.hide();
+      Splashscreen.hide();
     });
 /*   this.push.register().then((t: PushToken) => {
   return this.push.saveToken(t);

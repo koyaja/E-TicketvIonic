@@ -1,8 +1,8 @@
 import { ToastController } from 'ionic-angular/components/toast/toast';
 import { Component } from '@angular/core';
 import { ServicePage } from './../service/service';
-import { BrancheEntity } from './../../app/entitie/branche';
-import { Http, Headers, RequestOptions } from '@angular/http';
+//import { BrancheEntity } from './../../app/entitie/branche';
+import { Http } from '@angular/http';
 import { NavController, LoadingController } from 'ionic-angular';
 //import { Showticket } from '../showticket/showticket'
 import { Restservice } from '../../app/restservice/restservice'

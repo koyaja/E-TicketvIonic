@@ -23,13 +23,13 @@ export class Restservice {
     );*/
 
     this.http = http;
- //   this.baseUrl = 'http://192.168.0.137:9090/MobileTicket/';
-    this.baseUrl = '/api/';
+   // this.baseUrl = 'http://192.168.0.137:9090/MobileTicket/';
+  this.baseUrl = '/api/';
   }
 
   geturlapi() {
     let headers = new Headers();
-    console.log("point 1");
+    console.log("get url api getway");
     headers.append("accept", "application/json");
     headers.append("Content-Type", "application/json");
     headers.append("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTQ5ODYzNTMzOH0.BquE2axOCwqPz0q0XOe18vCHw8u3hiohejPmoHWXZFnloYy3KV66SP2rAm-jvAdfTojcvMVwzNADiHSzBMG2vQ");

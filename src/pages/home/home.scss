@@ -23,9 +23,17 @@ page-home {
         //  background-size: contain;
     }*/
     //  background-image: url("../img/newbkg.png");
-    #taketicket {
-        // margin: 20px auto;
+    .btnhome {
         display: block;
+        size: 50px;
+        padding: 1.5em 1em;
+        margin: 0.1em auto;
+        text-align: center;
+        font-size: 1.5em;
+        color: black;
+        background-color: rgba(248, 248, 248, 0.75);
+        // margin: 20px auto;
+        /*   display: block;
         size: 50px;
         padding: 10px auto 10px auto;
         margin: -1px auto;
@@ -46,7 +54,13 @@ page-home {
         //font-weight: 200 !important;
         line-height: 24px;
         word-break: break-all !important;
+        //  font-weight: 200 !important;
+        // font-weight: bold;
+        // display: table;
+        line-height: 24px;
+        word-break: break-all !important;
         font-weight: 200 !important;
+        // white-space: pre-wrap*/
     }
     #icon1 {
         align-content: right;
@@ -61,7 +75,7 @@ page-home {
         display: block;
         font-size: 20px;
         padding: 10px auto;
-        margin: 20px auto;
+        // margin: 20px auto;
         text-align: center;
         color: white;
         //  font-family: 'Nanami-Rounded-Medium'

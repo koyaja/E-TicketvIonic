@@ -16,7 +16,7 @@ import { ToastController } from 'ionic-angular/components/toast/toast';
   export class ServicePage {
   movies: Array<any>;
   Service:Array<any>;
-  brancheName:string ;
+  brancheName?:string ;
    loading: any;
    iserror: boolean = false;
   id:number;

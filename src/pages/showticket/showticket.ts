@@ -33,7 +33,7 @@ export class Showticket {
   queueId: number;
   branchId: number;
   serviceId: number;
-  branchename: string;
+  branchename?: string;
   ticketencour: boolean;
   iscalled:boolean=false;
   isticketfinish:boolean=false;
@@ -58,10 +58,10 @@ export class Showticket {
   visitinfo: VisitStatusEntity = new VisitStatusEntity()
   /**Time manupule  */
 
-  private timerStart = 10 * 60 * 1000; //minutes
-  private timerGap = 1000;
-  private countDownreTimersource;
-  private serviceFecthTimerResource
+ // private timerStart = 10 * 60 * 1000; //minutes
+  //private timerGap = 1000;
+  //private countDownreTimersource;
+  //private serviceFecthTimerResource
   tab: Array<any> = []
   items: number[] = [];
   fakeArray = new Array(1);
@@ -252,7 +252,6 @@ if(this.iscalled){
                 }
 else
             {
-
 
       this.visitPosition = this.visitinfo.position;
       this.queueName = this.visitinfo.currentServiceName;

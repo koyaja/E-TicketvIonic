@@ -20,17 +20,17 @@ export class HomePage {
   constructor(public navCtrl: NavController,translate: TranslateService,public popoverCtrl: PopoverController) {
 
   }
-  private passnew(){
+ private passnew(){
 this.navCtrl.push(ListagencePage);
     console.log("test");
-  }
+  } /*
    private parametreshow(){
 this.navCtrl.push(Parametre);
     console.log("test");
   }
   private showServices() {
   //  this.navCtrl.push(ServicePage);
-  }
+  }*/
 private showMarketing() {
     this.navCtrl.push(MarketingPage);
   }

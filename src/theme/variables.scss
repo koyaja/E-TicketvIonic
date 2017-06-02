@@ -15,7 +15,7 @@ $font-path: "../assets/fonts";
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
-$colors: ( primary:rgba(100, 100, 100, 255), secondary: #32db64, danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
+$colors: ( primary:rgba(100, 100, 100, 255), secondary: rgba(248, 248, 248, 0.75), danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
 // App iOS Variables
 //primary : #387ef5
 // --------------------------------------------------
@@ -53,3 +53,101 @@ $colors: ( primary:rgba(100, 100, 100, 255), secondary: #32db64, danger: #f53d3d
 }
 
 //btn accueil
+
+/*.btnhome {
+    // margin: 20px auto;
+    display: block;
+    size: 50px;
+    padding: 10px auto 10px auto;
+    margin: -1px auto;
+    width: 85%;
+    height: 78px;
+    text-align: center;
+    font-size: 15px;
+    //  background-color: transparent !important;
+    //   font-family: 'Nanami-Rounded-Medium';
+    color: black;
+    // color: white !important;
+    background-color: rgba(248, 248, 248, 0.75);
+    //font-size-adjust: 0.58;
+    //text-align: left;
+    // padding-right:10px;
+    // margin: 10px 10px 10px 10px;
+    // word-break: break-all !important;
+    //font-weight: 200 !important;
+    line-height: 24px;
+    word-break: break-all !important;
+    font-weight: 200 !important;
+}*/
+
+// gestion erreur css
+.errordiv {
+    //  display: inline-block;
+    // display: table-cell;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    padding: 25px;
+    display: block;
+}
+
+.errordiv label {
+    text-align: center;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding: auto;
+    align-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+.laberror {
+    font-size: 20px;
+    color: white;
+}
+
+#bntq {
+    display: block;
+    padding: 25px;
+    margin: 34px auto;
+    width: 250px;
+    font-family: Helvetica;
+}
+
+#global {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+
+/*entete
+.titre {
+    display: block;
+    font-size: 20px;
+    padding: 10px auto;
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+    background: transparent !important;
+    //  font-family: 'Nanami-Rounded-Medium'
+}*/
+
+.btn-custom1 {
+    display: block !important;
+    padding: 1.5em 1em !important;
+    margin: 1em auto !important;
+    text-align: center !important;
+    font-size: 1.5em !important;
+    color: black !important;
+    background-color: rgba(248, 248, 248, 0.75) !important;
+    width: 85% !important;
+    font-weight: lighter !important;
+}
+
+ion-item.btn-custom1.round {
+    padding: 0 !important;
+    border-radius: 64px;
+}
