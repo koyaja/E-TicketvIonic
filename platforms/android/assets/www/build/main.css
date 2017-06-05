@@ -3901,13 +3901,18 @@ ion-icon {
 .btn-custom1 {
   display: block !important;
   padding: 1.5em 1em !important;
-  margin: 0.1em auto !important;
+  margin: 1em auto !important;
   text-align: center !important;
   font-size: 1.5em !important;
   color: black !important;
   background-color: rgba(248, 248, 248, 0.75) !important;
-  width: 85%;
+  width: 85% !important;
   font-weight: lighter !important;
+}
+
+ion-item.btn-custom1.round {
+  padding: 0 !important;
+  border-radius: 64px;
 }
 
 ion-action-sheet {
