@@ -190,3 +190,4 @@
 [0504/164425.268:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accès refusé. (0x5)
 [0504/164425.296:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: Le canal de communication a été fermé. (0x6D)
 [0504/164425.297:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Accès refusé. (0x5)
+[0605/151657.677:ERROR:process_info.cc(389)] NtQuerySystemInformation SystemExtendedHandleInformation: {Quota insuffisant} Le quota de mémoire virtuelle ou de fichier d’échange est insuffisant pour finir l’opération spécifiée.  (0xc0000017)

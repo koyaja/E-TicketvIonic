@@ -3915,6 +3915,17 @@ ion-item.btn-custom1.round {
   border-radius: 64px;
 }
 
+.toolbarmin {
+  font-size: 14px;
+  color: white;
+  padding-left: 12px;
+  margin: 0px !important;
+}
+
+.toolbar-title {
+  display: -webkit-box !important;
+}
+
 ion-action-sheet {
   position: absolute;
   top: 0;
@@ -27324,6 +27335,10 @@ page-listagence #titre {
   margin: 20px auto;
   text-align: center;
   color: white;
+}
+
+page-listagence #toolbarmin {
+  font-size: 12px;
 }
 
 page-marketing {
