@@ -115,7 +115,7 @@ presentToast() {
   let toast = this.toastCtrl.create({
     message: 'Problème de connexion',
     duration: 3000,
-    position: 'top'
+    position: 'bottom'
   });
 
   toast.onDidDismiss(() => {

@@ -466,7 +466,7 @@ else
     let toast = this.toastCtrl.create({
       message: 'Appuyer sur la touche du milieu ou annuler le ticket',
       duration: 3000,
-      position: 'top'
+      position: 'bottom'
     });
 
     toast.onDidDismiss(() => {
