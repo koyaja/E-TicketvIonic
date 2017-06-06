@@ -13,18 +13,18 @@ export class Restservice {
   signature: string = "b903de146a3764e2141c464713212606"
   baseUrl: String;
   constructor(http: Http) {
-     /*  this.storage.get('url').then((val) => {
-     //  this.baseUrl = val;
-       console.log(val);
+    /*  this.storage.get('url').then((val) => {
+    //  this.baseUrl = val;
+      console.log(val);
 
 
-    }
+   }
 
-    );*/
+   );*/
 
     this.http = http;
-   // this.baseUrl = 'http://192.168.0.137:9090/MobileTicket/';
-  this.baseUrl = '/api/';
+     this.baseUrl = 'http://192.168.0.137:9090/MobileTicket/';
+   // this.baseUrl = '/api/';
   }
 
   geturlapi() {
@@ -35,7 +35,7 @@ export class Restservice {
     headers.append("Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTQ5ODYzNTMzOH0.BquE2axOCwqPz0q0XOe18vCHw8u3hiohejPmoHWXZFnloYy3KV66SP2rAm-jvAdfTojcvMVwzNADiHSzBMG2vQ");
 
     var option = new RequestOptions({ headers: headers });
-    return this.http.get("/api2/"+this.signature, option).map(res => res.json());
+    return this.http.get("/api2/" + this.signature, option).map(res => res.json());
   }
 
   /**Recuperation brancehe */

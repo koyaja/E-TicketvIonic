@@ -1,3 +1,4 @@
+import { PrdvPage } from './../prdv/prdv';
 import { PopoverPage } from './../popover/popover';
 //import { ServicePage } from './../service/service';
 import { Component } from '@angular/core';
@@ -39,6 +40,9 @@ private showMarketing() {
     popover.present({
       ev: myEvent
     });
+  }
+  pageprdv(){
+    this.navCtrl.push(PrdvPage);
   }
 
 }

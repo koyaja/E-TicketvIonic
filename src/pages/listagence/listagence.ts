@@ -1,3 +1,4 @@
+import { ErrorComponent } from './../../components/error/error';
 import { ToastController } from 'ionic-angular/components/toast/toast';
 import { Component } from '@angular/core';
 import { ServicePage } from './../service/service';
@@ -76,6 +77,7 @@ this.iserror=false;
 
     )
   }
+
   getAgence() {
 this.presentLoadingDefault();
     this.restservice.getAllbranches().subscribe(Agences => {

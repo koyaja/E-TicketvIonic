@@ -1,3 +1,5 @@
+import { PrdvPage } from './../pages/prdv/prdv';
+import { ErrorComponent } from './../components/error/error';
 //import { TextToSpeech } from '@ionic-native/text-to-speech';
 import { PopoverPage } from './../pages/popover/popover';
 //import { TextToSpeech } from '@ionic-native/text-to-speech'
@@ -58,7 +60,9 @@ const cloudSettings: CloudSettings = {
     Parametre,
     GeolocalisationPage,
     ServicePage,
-    PopoverPage
+    PopoverPage,
+    ErrorComponent,
+    PrdvPage
 
 
     //  PostticketPage
@@ -90,7 +94,8 @@ const cloudSettings: CloudSettings = {
     Parametre,
     GeolocalisationPage,
     ServicePage,
-    PopoverPage
+    PopoverPage,
+    PrdvPage
 
     // PostticketPage
   ],

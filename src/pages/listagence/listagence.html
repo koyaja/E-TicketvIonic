@@ -1,27 +1,28 @@
 <ion-header color='primary'>
     <ion-navbar color='primary'>
         <ion-toolbar color='primary'>
-            <ion-title> {{'Listeagencepage.namepage' | translate }} </ion-title>
-            <p class="toolbarmin" style="font-size:12px"> {{'Listeagencepage.namepage' | translate }} </p>
+            <ion-title> {{'ModuleTicketPage.title' | translate }} </ion-title>
+            <!--<ion-title color="primary" id="sube-title" class="sube-title toolbar-title-md toolbar-title" style="font-size:12px"> {{'Listeagencepage.namepage' | translate }} </ion-title>-->
+            <!--<div color="primary" class="sube-title toolbar-title-md toolbar-title" style="font-size:12px"> {{'Listeagencepage.namepage' | translate }} </div>-->
         </ion-toolbar>
     </ion-navbar>
 </ion-header>
 
 <ion-content class="has-header">
-    <div *ngIf="!iserror">
-        <p id="titre"> {{'Listeagencepage.nameagence' | translate }}</p>
-    </div>
-    <div *ngIf="!iserror">
+    <!--<div *ngIf="!iserror">
+    </div>-->
+    <div *ngIf="!iserror" class="page-content-default">
+        <div class="page-title"> {{'ModuleTicketPage.message' | translate }}</div>
         <ion-list>
             <ion-item *ngFor=" let b of branche" class="btn-custom1 round" (click)="itemTaped(b)">
-                <h1 class="h1">{{b.name}}</h1>
-
+                <div center>{{b.name}}</div>
             </ion-item>
 
         </ion-list>
     </div>
-    <div *ngIf="iserror" class="errordiv" id="global">
+    <error *ngIf="iserror"></error>
+    <!-- <div *ngIf="iserror" class="errordiv" id="global">
         <label> {{'Divers.errortext' | translate }} </label>
         <button ion-button round (tap)="getAgence()" id="bntq" color="secondary">{{'Divers.errorbuton' | translate }}</button>
-    </div>
+    </div>-->
 </ion-content>

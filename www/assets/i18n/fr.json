@@ -4,7 +4,7 @@
         "Bpriseticket": "Prise de Ticket",
         "Bpriserdv": "Prise de Rendez-vous",
         "Bsclient": "Service client",
-        "Bmarketing": "Context marketing",
+        "Bmarketing": "Espace publicitaire",
         "Bsetting": "Parametre",
         "titles": "E-Ticket"
 
@@ -15,9 +15,10 @@
         "titles": "Liste des services"
 
     },
-    "Listeagencepage": {
-        "nameagence": " Veuillez choisir une agence",
-        "namepage": "Liste des agences"
+    "ModuleTicketPage": {
+        "title": "Prise de ticket",
+        "subtitle": " Veuillez choisir une agence",
+        "message": " Veuillez choisir une agence"
 
     },
     "Showticketpage": {
@@ -27,7 +28,12 @@
         "note": "Veuillez patientiez...  ",
         "namepage": "Votre Place est ",
         "notewelcom": "Bienvenue à",
-        "yourturn": "Veuillez passez au"
+        "yourturn": "Veuillez passez au",
+        "okbtn": "Ok",
+        "ticketEndMessage": "Merci pour votre visite.",
+        "dialog": {
+            "titleTicketCall": "Ticket appelé"
+        }
 
     },
     "Contactpage": {
@@ -48,10 +54,22 @@
         "cancelbuttonnotif": "non",
         "okcancel": "Oui"
     },
-    "Divers": {
-        "errortext": "Une erreur s'est produite",
-        "errorbuton": "Réessayer",
-        "Taostmessage": "",
-        "loadingmessage": ""
+    "Error": {
+        "errorMessage": "Une erreur s'est produite",
+        "errorButton": "Réessayer",
+        "taostMessage": "",
+        "loadingMessage": ""
+    },
+    "ModuleRendezVousPage": {
+        "title": "Prise de rendez-vous",
+        "subtitle": "...",
+        "message": "..."
+
+    },
+    "ModuleMarketingPage": {
+        "title": "Espace publicitaire",
+        "subtitle": "...",
+        "message": "..."
+
     }
 }

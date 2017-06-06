@@ -95,11 +95,16 @@
         <button ion-button round (tap)="gevisitstatus(branchId, visitId,checksum);" id="bntq" color="secondary">{{'Divers.errorbuton' | translate }}</button>
     </div>
     <div *ngIf="isticketfinish">
+        <div class="page-title"> {{'Showticketpage.ticketEndMessage' | translate }}</div>
+        <button ion-button round (tap)="home()" class="btn-default" color="secondary">{{'Showticketpage.okbtn' | translate}}</button>
+        <!--  <button ion-button class="new" (tap)="home()">{{'Showticketpage.okbtn' | translate}}</button>-->
+    </div>
+    <!-- <div *ngIf="isticketfinish">
         <div class="fvisit">
 
             <label class="labfin center">
     Merci Pour votre visite
-       </label>
+           </label>
 
             <ion-range min="0" max="10" pin="true" step="1" snaps="true" [(ngModel)]="text">
                 <ion-label range-left class="small-text">0</ion-label>
@@ -108,8 +113,9 @@
             <ion-label>Dite nous un mot</ion-label>
             <ion-textarea rows='5'></ion-textarea>
             <div class="fbutton">
-                <button ion-button class="new" (tap)="home()">Poster</button>
+                <button ion-button class="new" (tap)="home()">Valider</button>
                 <button ion-button outline class="feed">Ignorer</button> </div>
         </div>
-    </div>
+    </div>-->
+
 </ion-content>

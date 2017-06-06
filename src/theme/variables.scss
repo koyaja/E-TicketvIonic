@@ -15,7 +15,8 @@ $font-path: "../assets/fonts";
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
-$colors: ( primary:rgba(100, 100, 100, 255), secondary: rgba(248, 248, 248, 0.75), danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
+$colors: ( primary:rgba(131, 20, 48, 255), secondary: rgba(248, 248, 248, 0.75), danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
+//$colors: ( primary:rgba(100, 100, 100, 255), secondary: rgba(248, 248, 248, 0.75), danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
 // App iOS Variables
 //primary : #387ef5
 // --------------------------------------------------
@@ -81,7 +82,7 @@ $colors: ( primary:rgba(100, 100, 100, 255), secondary: rgba(248, 248, 248, 0.75
 }*/
 
 // gestion erreur css
-.errordiv {
+.page-content-error {
     //  display: inline-block;
     // display: table-cell;
     margin-left: auto;
@@ -91,7 +92,7 @@ $colors: ( primary:rgba(100, 100, 100, 255), secondary: rgba(248, 248, 248, 0.75
     display: block;
 }
 
-.errordiv label {
+.page-content-error .message-error {
     text-align: center;
     margin-top: auto;
     margin-left: auto;
@@ -108,12 +109,13 @@ $colors: ( primary:rgba(100, 100, 100, 255), secondary: rgba(248, 248, 248, 0.75
     color: white;
 }
 
-#bntq {
-    display: block;
-    padding: 25px;
-    margin: 34px auto;
-    width: 250px;
+.btn-default {
+    display: block !important;
+    padding: 1.625em !important;
+    margin: 1em auto !important;
+    /* width: 250px; */
     font-family: Helvetica;
+    font-weight: lighter !important;
 }
 
 #global {
@@ -137,7 +139,7 @@ $colors: ( primary:rgba(100, 100, 100, 255), secondary: rgba(248, 248, 248, 0.75
 
 .btn-custom1 {
     display: block !important;
-    padding: 1.5em 1em !important;
+    padding: 1.5em 0.5em !important;
     margin: 1em auto !important;
     text-align: center !important;
     font-size: 1.5em !important;
@@ -147,18 +149,62 @@ $colors: ( primary:rgba(100, 100, 100, 255), secondary: rgba(248, 248, 248, 0.75
     font-weight: lighter !important;
 }
 
+.btn-custom1[icon-right] ion-icon {
+    line-height: 1 !important;
+    padding-left: 0 !important;
+}
+
+.btn-custom1 .label-md {
+    margin: 0;
+}
+
 ion-item.btn-custom1.round {
-    padding: 0 !important;
+    padding: 0.5em 1em!important;
     border-radius: 64px;
 }
 
-.toolbarmin {
-    font-size: 14px;
-    color: white;
-    padding-left: 12px;
-    margin: 0px !important;
+.sube-title {
+    // color: white;
+    //  padding-left: 12px;
+    font-weight: lighter!important;
+    font-size: 14px !important;
 }
+
+#sube-title {
+    // color: white;
+    //  padding-left: 12px;
+    font-weight: lighter!important;
+    font-size: 14px !important;
+}
+
+.page-title {
+    display: block;
+    font-size: 20px;
+    padding: 10px auto;
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+}
+
+*[no-padding] {
+    padding: 0px !important;
+}
+
+*[text-ellipsis] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/***************************************************************************
+Bootstap Customization
+ ***************************************************************************/
 
 .toolbar-title {
     display: -webkit-box !important;
+}
+
+.list-md .item-block .item-inner {
+    border-bottom: none !important;
 }

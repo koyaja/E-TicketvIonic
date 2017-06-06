@@ -25,7 +25,9 @@ export class MyApp {
 
   rootPage  = HomePage;
 
+
   constructor(platform: Platform, private storage:Storage,private translate: TranslateService,private restservice: Restservice) {
+   /**chargement de la translation  */
     this.translateConfig();
 //this.getconfig();
     platform.ready().then(() => {
@@ -79,7 +81,7 @@ this.push.rx.notification()
   }
 
 
-
+/**methode de chargement de la langue */
 translateConfig() {
     var userLang = navigator.language.split('-')[0]; // use navigator lang if available
     userLang = /(fr|en)/gi.test(userLang) ? userLang : 'fr';
@@ -90,6 +92,7 @@ translateConfig() {
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     this.translate.use(userLang);
   }
+  /**requete de check serveur mobile pour la recuperation l'adresse api getway */
 getconfig(){
   this.restservice.geturlapi().subscribe(api=>{
 console.log(api)
@@ -98,7 +101,10 @@ this.storage.set('client', api.name);
 
 },error=>{
   console.log(error);
-})/*
+})
+
+
+/*
 this.storage.get('url').then((val) => {
    if(val==null || val==""){
 this.restservice.geturlapi().subscribe(api=>{

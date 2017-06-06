@@ -13,35 +13,48 @@
 </ion-header>
 <ion-content class="has-header">
     <div>
-        <p id="titre"> {{'Homepage.bienvenu' | translate }}</p>
+        <p class="page-title"> {{'Homepage.bienvenu' | translate }}</p>
     </div>
     <div>
         <button class="btn-custom1" (tap)="passnew()" ion-button round icon-right>
+          <ion-grid no-padding>
+            <ion-row no-padding>
+              <ion-col col-11 center text-wrap>
+                {{'Homepage.Bpriseticket' | translate }}
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid >
+        </button>
 
-        {{'Homepage.Bpriseticket' | translate }}
 
-        <ion-icon name="ios-arrow-forward-outline" id="icon1" class="icon-right"></ion-icon>
-    </button>
+        <button class="btn-custom1" (tap)="pageprdv()" ion-button round icon-right button-calm>
+          <ion-grid no-padding>
+            <ion-row no-padding>
+              <ion-col col-11 center text-wrap>
+                {{'Homepage.Bpriserdv' | translate }}
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </button>
 
-
-        <button class="btn-custom1" ion-button round icon-right button-calm>
-  {{'Homepage.Bpriserdv' | translate }}
-   <ion-icon name="ios-arrow-forward-outline" id="icon1" class="icon-right"></ion-icon>
-  </button>
-
-        <!-- <button id="taketicket" ion-button icon-right (tap)="showServices()">
-   {{'Homepage.Bsclient' | translate }}
-   <ion-icon name="ios-arrow-forward-outline" class="icon-right"></ion-icon>
-  </button><br>
-   <button id="taketicket" ion-button icon-right (tap)="parametreshow()">
- {{'Homepage.Bsetting' | translate }}
-   <ion-icon name="ios-arrow-forward-outline" class="icon-right" ></ion-icon>
-  </button>
-  -->
         <button class="btn-custom1" ion-button round icon-right (tap)="showMarketing()">
-   {{'Homepage.Bmarketing' | translate }}
-   <ion-icon name="ios-arrow-forward-outline" class="icon-right"></ion-icon>
-  </button>
+          <ion-grid no-padding>
+            <ion-row no-padding>
+              <ion-col col-11 center text-wrap>
+                {{'Homepage.Bmarketing' | translate }}
+              </ion-col>
+              <ion-col col-1>
+                <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </button>
 
     </div>
 </ion-content>

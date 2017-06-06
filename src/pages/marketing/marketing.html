@@ -1,12 +1,16 @@
 <ion-header color='primary'>
     <ion-navbar color='primary'>
-        <ion-title>E-Ticket Marketing</ion-title>
+        <ion-toolbar color='primary'>
+            <ion-title> {{'ModuleMarketingPage.title' | translate }} </ion-title>
+            <!--<ion-title color="primary" id="sube-title" class="sube-title toolbar-title-md toolbar-title" style="font-size:12px"> {{'Listeagencepage.namepage' | translate }} </ion-title>-->
+            <!--<div color="primary" class="sube-title toolbar-title-md toolbar-title" style="font-size:12px"> {{'Listeagencepage.namepage' | translate }} </div>-->
+        </ion-toolbar>
     </ion-navbar>
 </ion-header>
 
 <ion-content class="has-header">
     <div>
-        <p id="titre"><strong> Bienvenue dans E-Ticket Marketing</strong></p>
+        <p class="page-title"> {{'ModuleMarketingPage.message' | translate }}</p>
     </div>
     <!--
             <ion-card>
@@ -29,9 +33,9 @@
                 </ion-item>
 
             </ion-card>-->
-    <ion-content class="card-background-page">
+    <ion-content class="has-header">
 
-        <ion-card *ngFor=" let mark of Marckic">
+        <!--     <ion-card *ngFor=" let mark of Marckic">
 
             <img src='{{mark.url}}' />
             <div class="card-title">{{mark.message}}</div>
@@ -48,7 +52,7 @@
                 <ion-icon name="logo-twitter"></ion-icon>
             Aimez-nous
             </button>
-        </ion-card>
+        </ion-card>-->
 
     </ion-content>
 </ion-content>

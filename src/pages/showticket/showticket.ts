@@ -35,14 +35,14 @@ export class Showticket {
   serviceId: number;
   branchename?: string;
   ticketencour: boolean;
-  iscalled:boolean=false;
-  isticketfinish:boolean=false;
+  iscalled: boolean = false;
+  isticketfinish: boolean = false;
   hilightSelcted: boolean = false;
   iserror: boolean = false;
-  guichet:string ;
+  guichet: string;
   /**Queut info  */
 
-  public queueName: string = "";
+  public servicePointName: string = "";
   public visitPosition: number;
   public waitingVisits: number;
   public index1: number;
@@ -58,7 +58,7 @@ export class Showticket {
   visitinfo: VisitStatusEntity = new VisitStatusEntity()
   /**Time manupule  */
 
- // private timerStart = 10 * 60 * 1000; //minutes
+  // private timerStart = 10 * 60 * 1000; //minutes
   //private timerGap = 1000;
   //private countDownreTimersource;
   //private serviceFecthTimerResource
@@ -240,49 +240,51 @@ export class Showticket {
  }*/
     return true;
   }
-/** fonction etat visite */
+
+
+  /** fonction etat visite */
   gevisitstatus(idbr, idse, cheksum) {
     console.log("get visite state");
 
     this.restservice.getcurentvisitstat(idbr, idse, cheksum).then(ticketviststatus => {
 
-    this.visitinfo = ticketviststatus;
-if(this.iscalled){
-   setInterval(this.teststatut(ticketviststatus), 3000);
-                }
-else
-            {
+      this.visitinfo = ticketviststatus;
+      if (this.iscalled) {
+        // Verifier le statut pour savoir lorsque le ticket passe au status END
+        setInterval(this.teststatut(ticketviststatus), 3000);
+      }
+      else {
+        //
+        this.visitPosition = this.visitinfo.position;
+        this.servicePointName = this.visitinfo.servicePointName;
+        // Trier  de rang
+        this.fakeArray = (() => {
+          let startFromZero = false;
+          let array = Array(this.visitinfo.queueSize);
 
-      this.visitPosition = this.visitinfo.position;
-      this.queueName = this.visitinfo.currentServiceName;
-      /** triez  de rang*/
-      this.fakeArray = (() => {
-        let startFromZero = false;
-        let array = Array(this.visitinfo.queueSize);
+          for (let i = 0; i < array.length; i++) {
+            array[i] = i + (startFromZero ? 0 : 1);
+          }
 
-        for (let i = 0; i < array.length; i++) {
-          array[i] = i + (startFromZero ? 0 : 1);
-        }
+          return array.sort(function (a, b) {
+            return b - a;
+          });
+        })();
 
-        return array.sort(function (a, b) {
-          return b - a;
-        });
-      })();
+        /**Apele de test status */
+        setInterval(this.teststatut(ticketviststatus), 3000);
 
-  /**Apele de test status */
-      setInterval(this.teststatut(ticketviststatus), 3000);
-
-      //  this.Prosses(this.visitinfo.queueSize)
-      // this.createRange(this.visitinfo.queueSize)
-      // ticketviststatus= this.ticketinfo=ticketviststatus;
-      // var a=data.results
-      /*   this.ticketNumber=ticketinfo.ticketNumber;
-         this.branchId=ticketinfo.branchId;
-         this.queueId=ticketinfo.queueId;
-         this.checksum=ticketinfo.checksum;
-         this.serviceId=ticketinfo.serviceId;
-         this.visitId=ticketinfo.visitId;*/
-    }
+        //  this.Prosses(this.visitinfo.queueSize)
+        // this.createRange(this.visitinfo.queueSize)
+        // ticketviststatus= this.ticketinfo=ticketviststatus;
+        // var a=data.results
+        /*   this.ticketNumber=ticketinfo.ticketNumber;
+           this.branchId=ticketinfo.branchId;
+           this.queueId=ticketinfo.queueId;
+           this.checksum=ticketinfo.checksum;
+           this.serviceId=ticketinfo.serviceId;
+           this.visitId=ticketinfo.visitId;*/
+      }
       console.log(ticketviststatus)
       this.iserror = false;
     }, error => {
@@ -299,19 +301,19 @@ else
   presentLoadingDefault() {
     this.loading = this.loadingCtrl.create({
       content: 'Chargement en cours...'
-      });
+    });
     this.loading.present();
-     }
+  }
 
-     /**Chageme,t terminé  */
-   loadingfinish() {
+  /**Chageme,t terminé  */
+  loadingfinish() {
     setTimeout(() => {
       this.loading.dismiss();
     }, 3000);
     // this.ecoute=true;
     //this.Rrefreshe();
-   }
-   /**voir si la position est superieur 10 */
+  }
+  /**voir si la position est superieur 10 */
   showrang(): any {
     if (this.visitPosition > 10) {
       return false;
@@ -319,7 +321,7 @@ else
     else {
       return true;
     }
-   }
+  }
 
   /**visite position index du client  */
 
@@ -333,64 +335,64 @@ else
     return false;
   }
 
-/** Voir la status du client  */
+  /** Voir la status du client  */
 
   private teststatut(Viststate: VisitStatusEntity) {
     console.log('test status')
-    if( typeof Viststate=='undefined' && this.iscalled){
-      console.log('ticket fini'+Viststate)
-      this.isticketfinish=true
-    }else {
+    if (typeof Viststate == 'undefined' && this.iscalled) {
+      console.log('ticket fini' + Viststate)
+      this.isticketfinish = true
+    } else {
 
 
-    if (Viststate.currentStatus === 'IN_QUEUE' && this.istiketpresente) {
-      if (this.queueId != Viststate.queueId) {
-        this.sernam = Viststate.queueName;
+      if (Viststate.currentStatus === 'IN_QUEUE' && this.istiketpresente) {
+        if (this.queueId != Viststate.queueId) {
+          this.sernam = Viststate.queueName;
+        }
+        this.timer = TimerObservable.create(5000, 5000);
+        if (!this.showrang()) {
+          setTimeout(() => { console.log('10'); this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 10000)
+        } else {
+          console.log('verifie')
+          setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 3000)
+        }
+
+      } else if (Viststate.currentStatus === 'CALLED') {
+        // this.istiketpresente = false;
+        if (this.iscalled) {
+          setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 3000)
+        } else {
+          this.guichet = Viststate.servicePointName;
+          this.notification();
+          this.presentAlert()
+          setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 3000)
+        }
+        //this.text="Vous ete attendu";
+        // this.sayText();
+        console.log('called')
       }
-      this.timer = TimerObservable.create(5000, 5000);
-      if (!this.showrang()) {
-        setTimeout(() => { console.log('10'); this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 10000)
-      } else {
-        console.log('verifie')
-        setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 3000)
-      }
-
-    } else if (Viststate.currentStatus === 'CALLED') {
-     // this.istiketpresente = false;
-     if(this.iscalled){
-        setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 3000)
-     }else{
-     this.guichet=Viststate.servicePointName;
-     this.notification();
-      this.presentAlert()
-        setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 3000)
-     }
-      //this.text="Vous ete attendu";
-      // this.sayText();
-      console.log('called')
     }
-  }
   }
   /**Alert de ticket  */
   presentAlert() {
     let alert = this.alertCtrl.create({
       title: this.titlenotif,
-      subTitle: this.messagenotif + this.queueName,
+      subTitle: this.messagenotif + this.servicePointName,
       buttons: [{
         text: this.okbuttonenotif,
         handler: () => {
-         // this.navCtrl.setRoot(HomePage)
+          // this.navCtrl.setRoot(HomePage)
           console.log('Buy clicked');
         }
       }]
     });
     alert.present();
   }
-/**Confimation annuler ticket */
+  /**Confimation annuler ticket */
   presentConfirm() {
     let alert = this.alertCtrl.create({
       title: this.titlenotif,
-      message: this.messagenotif + this.queueName,
+      message: this.messagenotif + this.servicePointName,
       buttons: [
         {
           text: this.cancelbuttonnotif,
@@ -412,7 +414,7 @@ else
   }
   /**Notification  */
   notification() {
-    this.iscalled=true;
+    this.iscalled = true;
     this.localNotifications.schedule({
       id: 1,
       text: 'Vous ete appele',
@@ -434,12 +436,20 @@ else
     }
     )
   }
-/**charger les translation  */
+  /**charger les translation  */
+  getTranslante(id): any {
+    this.translate.get(id).subscribe((res: string) => {
+      return res;
+    });
+  }
 
   chargeTranslate() {
-    this.translate.get('Dialogue.titlenotif').subscribe((res: string) => {
-      this.titlenotif = res;
-    });
+    this.titlenotif = this.getTranslante('Showticketpage.dialog.titleTicketCall');
+    // this.titlecancel =  this.getTranslante('Dialogue.titlecancel');
+
+    /*    this.translate.get('Showticketpage.dialog.titleTicketCall').subscribe((res: string) => {
+          this.titlenotif = res;
+        });*/
     this.translate.get('Dialogue.titlecancel').subscribe((res: string) => {
       this.titlecancel = res;
     });
@@ -475,8 +485,8 @@ else
 
     toast.present();
   }
-/***retour home */
-home(){
-  this.navCtrl.setRoot(HomePage)
-}
+  /***retour home */
+  home() {
+    this.navCtrl.setRoot(HomePage)
+  }
 }

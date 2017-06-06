@@ -78,8 +78,8 @@ page-showticket {
         background-position-x: center;
         background-position-y: center;
         background-size: contain;
-        height: 200px;
-        max-height: 350px;
+        height: 20em;
+        max-height: 21.875em;
         margin-top: 3em;
         margin-bottom: 2em;
         // background-color: blue;
@@ -139,7 +139,7 @@ page-showticket {
         position: absolute;
     }
     .ticket-text {
-        width: 80%;
+        //  width: 80%;
         vertical-align: super;
         margin: 0 auto;
         white-space: nowrap;
@@ -162,7 +162,7 @@ page-showticket {
     .sub-heading-text-2 {
         font-size: 20px;
         color: #FFFFFF;
-        font-family: Nanami-Rounded-Light;
+        //  font-family: Nanami-Rounded-Light;
         width: 75%;
         margin: 0 auto;
     }
@@ -212,7 +212,7 @@ page-showticket {
     }
     .queue-itm.selected {
         background: white;
-        font-weight: 500;
+        //  font-weight: 500;
         font-size: 17px;
         width: 12vw;
         height: 12vw;
