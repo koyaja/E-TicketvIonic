@@ -444,12 +444,12 @@ export class Showticket {
   }
 
   chargeTranslate() {
-    this.titlenotif = this.getTranslante('Showticketpage.dialog.titleTicketCall');
+    // this.titlenotif = this.getTranslante('Showticketpage.dialog.titleTicketCall');
     // this.titlecancel =  this.getTranslante('Dialogue.titlecancel');
 
-    /*    this.translate.get('Showticketpage.dialog.titleTicketCall').subscribe((res: string) => {
-          this.titlenotif = res;
-        });*/
+    this.translate.get('Showticketpage.dialog.titleTicketCall').subscribe((res: string) => {
+      this.titlenotif = res;
+    });
     this.translate.get('Dialogue.titlecancel').subscribe((res: string) => {
       this.titlecancel = res;
     });

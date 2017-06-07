@@ -12,7 +12,7 @@
     <!--<div *ngIf="!iserror">
     </div>-->
     <div *ngIf="!iserror" class="page-content-default">
-        <div class="page-title"> {{'ModuleTicketPage.message' | translate }}</div>
+        <div class="page-message"> {{'ModuleTicketPage.message' | translate }}</div>
         <ion-list>
             <ion-item *ngFor=" let b of branche" class="btn-custom1 round" (click)="itemTaped(b)">
                 <div center>{{b.name}}</div>

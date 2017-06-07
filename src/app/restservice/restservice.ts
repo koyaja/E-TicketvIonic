@@ -23,8 +23,8 @@ export class Restservice {
    );*/
 
     this.http = http;
-     this.baseUrl = 'http://192.168.0.137:9090/MobileTicket/';
-   // this.baseUrl = '/api/';
+    // this.baseUrl = 'http://192.168.0.137:9090/MobileTicket/';
+    this.baseUrl = '/api/';
   }
 
   geturlapi() {

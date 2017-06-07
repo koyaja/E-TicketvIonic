@@ -78,8 +78,9 @@ page-showticket {
         background-position-x: center;
         background-position-y: center;
         background-size: contain;
-        height: 20em;
+        height: 45%;
         max-height: 21.875em;
+        min-height: 16em;
         margin-top: 3em;
         margin-bottom: 2em;
         // background-color: blue;
@@ -120,10 +121,10 @@ page-showticket {
         font-size: 29px !important;
     }
     .ticket-service-name {
-        margin-top: 1em;
+        margin-top: 0.5em;
         color: black !important;
         font-size: 20px !important;
-        width: 133px !important;
+        width: 10em !important;
         line-height: 24px;
         word-break: break-all !important;
         font-weight: 200 !important;

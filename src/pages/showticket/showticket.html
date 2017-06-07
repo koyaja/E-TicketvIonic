@@ -10,23 +10,26 @@
 </ion-header>
 
 <ion-content class="has-header">
-    <!--  <h3 id="textwelcome"> {{branchename}} </h3> -->
-    <h3 id="textwelcome" *ngIf="!iscalled && !isticketfinish"> {{'Showticketpage.note' | translate}} </h3>
-
+    <div *ngIf="!iscalled && !isticketfinish">
+        <div class="page-message"> {{'Showticketpage.note' | translate}}</div>
+    </div>
     <div *ngIf="showrang() && !iscalled && !isticketfinish">
         <div *ngFor="let num of fakeArray; let i = index" class="col center-text queue-itm parent-center" [ngClass]="{ selected:SelctedPosition(num), other:!SelctedPosition(num), animselected:animatePosition(num)}">
             <div [ngClass]="{'child-center': true, 'center-content' : !hilightSelcted}">
                 <div class="box  ellipsis  reverse-ellipsis content-container-one">
-                    <div class="ellipsis__content">{{num}}</div>
+                    <div class="ellipsis__content">{{num}}
+                        <sup *ngIf="num==1 && SelctedPosition(num)">{{'Showticketpage.position.first' | translate}}</sup>
+                        <sup *ngIf="num>1 && SelctedPosition(num)">{{'Showticketpage.position.other' | translate}}</sup>
+                    </div>
                 </div>
             </div>
-            <div *ngIf="SelctedPosition(num)" class="content-container-two">
+            <div *ngIf="SelctedPosition(num) && num" class="content-container-two">
                 <div class="ellipsis__content">{{'Showticketpage.yourposition' | translate}}</div>
             </div>
         </div>
     </div>
     <div *ngIf="iscalled && !isticketfinish">
-        <ion-label class="guichet">{{'Showticketpage.yourturn' | translate}} {{guichet}} </ion-label>
+        <div class="page-message">{{'Showticketpage.yourturn' | translate}} {{guichet}} </div>
     </div>
 
 
@@ -82,9 +85,8 @@
 
     <div *ngIf="!isticketfinish" class="ticket_container ticket_info parent-center parent-center:before">
         <div class="child-center">
-
-            <div class="sub-heading-text-2 ticket-service-name"> {{sernam}} </div>
-            <div class="fadeIn ticket-text ticket-size-6 ticket_nmbr"> {{ticketNumber}}</div>
+            <div class="fadeIn ticket-text ticket-size-1 ticket_nmbr"> {{ticketNumber}}</div>
+            <div class="ticket-service-name"> {{sernam}} </div>
         </div>
     </div>
     <button *ngIf="!iscalled" ion-button color="danger" round id="bntq" (tap)='Cancelvisite()'>{{'Showticketpage.cancelviste' | translate}}</button>
@@ -95,7 +97,7 @@
         <button ion-button round (tap)="gevisitstatus(branchId, visitId,checksum);" id="bntq" color="secondary">{{'Divers.errorbuton' | translate }}</button>
     </div>
     <div *ngIf="isticketfinish">
-        <div class="page-title"> {{'Showticketpage.ticketEndMessage' | translate }}</div>
+        <div class="page-message"> {{'Showticketpage.ticketEndMessage' | translate }}</div>
         <button ion-button round (tap)="home()" class="btn-default" color="secondary">{{'Showticketpage.okbtn' | translate}}</button>
         <!--  <button ion-button class="new" (tap)="home()">{{'Showticketpage.okbtn' | translate}}</button>-->
     </div>

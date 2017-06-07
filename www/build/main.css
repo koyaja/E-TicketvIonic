@@ -3935,7 +3935,7 @@ ion-item.btn-custom1.round {
   font-size: 14px !important;
 }
 
-.page-title {
+.page-message {
   display: block;
   font-size: 20px;
   padding: 10px auto;
@@ -27700,8 +27700,9 @@ page-showticket .ticket_container {
   background-position-x: center;
   background-position-y: center;
   background-size: contain;
-  height: 20em;
+  height: 45%;
   max-height: 21.875em;
+  min-height: 16em;
   margin-top: 3em;
   margin-bottom: 2em;
 }
@@ -27751,10 +27752,10 @@ page-showticket .ticket-size-6 {
 }
 
 page-showticket .ticket-service-name {
-  margin-top: 1em;
+  margin-top: 0.5em;
   color: black !important;
   font-size: 20px !important;
-  width: 133px !important;
+  width: 10em !important;
   line-height: 24px;
   word-break: break-all !important;
   font-weight: 200 !important;
