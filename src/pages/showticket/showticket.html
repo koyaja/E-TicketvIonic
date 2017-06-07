@@ -91,11 +91,8 @@
     </div>
     <button *ngIf="!iscalled" ion-button color="danger" round id="bntq" (tap)='Cancelvisite()'>{{'Showticketpage.cancelviste' | translate}}</button>
 
+    <error *ngIf="iserror && !isticketfinish" (click)="gevisitstatus(branchId, visitId,checksum);"></error>
 
-    <div *ngIf="iserror && !isticketfinish" class="errordiv" id="global">
-        <label> {{'Divers.errortext' | translate }} </label>
-        <button ion-button round (tap)="gevisitstatus(branchId, visitId,checksum);" id="bntq" color="secondary">{{'Divers.errorbuton' | translate }}</button>
-    </div>
     <div *ngIf="isticketfinish">
         <div class="page-message"> {{'Showticketpage.ticketEndMessage' | translate }}</div>
         <button ion-button round (tap)="home()" class="btn-default" color="secondary">{{'Showticketpage.okbtn' | translate}}</button>

@@ -1,8 +1,8 @@
 {
     "Homepage": {
         "bienvenu": "Veuillez choisir une opération",
-        "Bpriseticket": "Prise de Ticket",
-        "Bpriserdv": "Prise de Rendez-vous",
+        "Bpriseticket": "Prise de ticket",
+        "Bpriserdv": "Prise de rendez-vous",
         "Bsclient": "Service client",
         "Bmarketing": "Espace publicitaire",
         "Bsetting": "Parametre",
@@ -25,7 +25,7 @@
         "cancelviste": " Annuler le Ticket",
         "Bpriseticket": "Prise de Ticket",
         "yourposition": "Vous",
-        "note": "Veuillez patientiez...  ",
+        "note": "Votre position dans la file d'attente et votre ticket",
         "namepage": "Votre Place est ",
         "notewelcom": "Bienvenue à",
         "yourturn": "Veuillez passez au",
@@ -33,6 +33,12 @@
         "ticketEndMessage": "Merci pour votre visite.",
         "dialog": {
             "titleTicketCall": "Ticket appelé"
+        },
+        "position": {
+            "first": "ère",
+            "second": "ème",
+            "third": "ème",
+            "other": "ème"
         }
 
     },

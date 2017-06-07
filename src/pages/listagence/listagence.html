@@ -20,7 +20,7 @@
 
         </ion-list>
     </div>
-    <error *ngIf="iserror"></error>
+    <error *ngIf="iserror" (click)="getAgence()"></error>
     <!-- <div *ngIf="iserror" class="errordiv" id="global">
         <label> {{'Divers.errortext' | translate }} </label>
         <button ion-button round (tap)="getAgence()" id="bntq" color="secondary">{{'Divers.errorbuton' | translate }}</button>

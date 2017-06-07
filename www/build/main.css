@@ -3938,8 +3938,8 @@ ion-item.btn-custom1.round {
 .page-message {
   display: block;
   font-size: 20px;
-  padding: 10px auto;
-  margin: 20px auto;
+  padding: 0.25em;
+  margin: 0.5em auto;
   text-align: center;
   color: white;
 }
@@ -3963,6 +3963,16 @@ Bootstap Customization
 
 .list-md .item-block .item-inner {
   border-bottom: none !important;
+}
+
+.ios ion-nav > .ion-page > ion-header > .toolbar.statusbar-padding:first-child ion-title {
+  height: inherit !important;
+  min-height: inherit !important;
+  padding: 0 !important;
+}
+
+.toolbar-title-ios.toolbar-title {
+  display: inline-block !important;
 }
 
 ion-action-sheet {
@@ -27664,11 +27674,6 @@ page-showticket #num {
   transform: translateY(-120%);
 }
 
-page-showticket h1 {
-  color: white;
-  font-family: 'Helvetica';
-}
-
 page-showticket #listhz {
   background-color: white;
   font-size: 40px;
@@ -27703,7 +27708,7 @@ page-showticket .ticket_container {
   height: 45%;
   max-height: 21.875em;
   min-height: 16em;
-  margin-top: 3em;
+  margin-top: 1em;
   margin-bottom: 2em;
 }
 
@@ -27984,7 +27989,6 @@ page-showticket .new {
   }
   page-showticket .queue-itm.selected {
     background: white;
-    font-weight: 500;
     font-size: 15px;
     width: 12vw;
     height: 12vw;

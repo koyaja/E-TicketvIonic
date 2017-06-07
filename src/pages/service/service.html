@@ -34,8 +34,6 @@
 
         </ion-list>
     </div>
-    <div *ngIf="iserror" class="errordiv" id="global">
-        <label> {{'Divers.errortext' | translate }} </label>
-        <button ion-button round (tap)="getService(id)" id="bntq" color="secondary">{{'Divers.errorbuton' | translate }}</button>
-    </div>
+    <error *ngIf="iserror" (click)="getService(id)"></error>
+
 </ion-content>

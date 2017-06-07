@@ -87,13 +87,13 @@ export class Showticket {
     this.sernam = navParams.get('sernam');
     this.getvisit(this.idser, this.idbr);
     this.backgroundMode.enable();
-    if (this.visitId != null) {
+    /*if (this.visitId != null) {
       while (true) {
         console.log("check");
         this.gevisitstatus(this.branchId, this.visitId, this.checksum);
       }
       //
-    }
+    }*/
     this.platform.registerBackButtonAction(() => {
       console.log('go back')
       if (this.istiketpresente === true) {
@@ -249,9 +249,20 @@ export class Showticket {
     this.restservice.getcurentvisitstat(idbr, idse, cheksum).then(ticketviststatus => {
 
       this.visitinfo = ticketviststatus;
+
+      //verifier la connexion
+      if (typeof  this.visitinfo == 'undefined' ) {
+        console.log('connection perdu')
+        this.toastError();
+        setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 10000);
+        return;
+      }
+
+
       if (this.iscalled) {
         // Verifier le statut pour savoir lorsque le ticket passe au status END
-        setInterval(this.teststatut(ticketviststatus), 3000);
+        setTimeout(() => { this.teststatut(ticketviststatus) }, 3000);
+        // setInterval(this.teststatut(ticketviststatus), 3000);
       }
       else {
         //
@@ -272,7 +283,8 @@ export class Showticket {
         })();
 
         /**Apele de test status */
-        setInterval(this.teststatut(ticketviststatus), 3000);
+        setTimeout(() => { this.teststatut(ticketviststatus) }, 3000);
+        // setInterval(this.teststatut(ticketviststatus), 3000);
 
         //  this.Prosses(this.visitinfo.queueSize)
         // this.createRange(this.visitinfo.queueSize)
@@ -326,8 +338,8 @@ export class Showticket {
   /**visite position index du client  */
 
   public SelctedPosition(index): boolean {
-    console.log("inexdex")
-    console.log(index)
+    // console.log("inexdex")
+    // console.log(index)
     if (index === this.visitPosition) {
       this.hilightSelcted = true;
       return true;
@@ -485,8 +497,27 @@ export class Showticket {
 
     toast.present();
   }
+
+  toastError() {
+    this.toast("Problème de connexion");
+  }
+
+  toast(msg) {
+    let toast = this.toastCtrl.create({
+      message: msg,
+      duration: 3000,
+      position: 'bottom'
+    });
+
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+
+    toast.present();
+  }
   /***retour home */
   home() {
+    this.istiketpresente=false;
     this.navCtrl.setRoot(HomePage)
   }
 }

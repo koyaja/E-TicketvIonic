@@ -180,8 +180,8 @@ ion-item.btn-custom1.round {
 .page-message {
     display: block;
     font-size: 20px;
-    padding: 10px auto;
-    margin: 20px auto;
+    padding: 0.25em;
+    margin: 0.5em auto;
     text-align: center;
     color: white;
 }
@@ -207,4 +207,14 @@ Bootstap Customization
 
 .list-md .item-block .item-inner {
     border-bottom: none !important;
+}
+
+.ios ion-nav>.ion-page>ion-header>.toolbar.statusbar-padding:first-child ion-title {
+    height: inherit !important;
+    min-height: inherit !important;
+    padding: 0 !important;
+}
+
+.toolbar-title-ios.toolbar-title {
+    display: inline-block !important;
 }
