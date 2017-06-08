@@ -29,7 +29,7 @@ export class MyApp {
   constructor(platform: Platform, private storage:Storage,private translate: TranslateService,private restservice: Restservice) {
    /**chargement de la translation  */
     this.translateConfig();
-//this.getconfig();
+    this.getconfig();
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -94,10 +94,10 @@ translateConfig() {
   }
   /**requete de check serveur mobile pour la recuperation l'adresse api getway */
 getconfig(){
-  this.restservice.geturlapi().subscribe(api=>{
-console.log(api)
-this.storage.set('url', api.apigetwayurl);
-this.storage.set('client', api.name);
+    this.restservice.geturlapi().subscribe(api=>{
+    console.log(api)
+    this.storage.set('url', api.apigetwayurl);
+    this.storage.set('client', api.name);
 
 },error=>{
   console.log(error);

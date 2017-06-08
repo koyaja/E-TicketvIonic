@@ -1,4 +1,4 @@
-import { ErrorComponent } from './../../components/error/error';
+//import { ErrorComponent } from './../../components/error/error';
 import { ToastController } from 'ionic-angular/components/toast/toast';
 import { Component } from '@angular/core';
 import { ServicePage } from './../service/service';
@@ -7,7 +7,6 @@ import { Http } from '@angular/http';
 import { NavController, LoadingController } from 'ionic-angular';
 //import { Showticket } from '../showticket/showticket'
 import { Restservice } from '../../app/restservice/restservice'
-
 import { AlertController } from 'ionic-angular';
 declare var MobileTicketAPI: any;
 @Component({

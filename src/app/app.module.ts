@@ -1,3 +1,4 @@
+import { Common } from './../shared/common';
 import { PrdvPage } from './../pages/prdv/prdv';
 import { ErrorComponent } from './../components/error/error';
 //import { TextToSpeech } from '@ionic-native/text-to-speech';
@@ -62,7 +63,8 @@ const cloudSettings: CloudSettings = {
     ServicePage,
     PopoverPage,
     ErrorComponent,
-    PrdvPage
+    PrdvPage,
+
 
 
     //  PostticketPage
@@ -95,10 +97,12 @@ const cloudSettings: CloudSettings = {
     GeolocalisationPage,
     ServicePage,
     PopoverPage,
-    PrdvPage
+    PrdvPage,
+
+
 
     // PostticketPage
   ],
-  providers: [Restservice, BackgroundMode, { provide: ErrorHandler, useClass: IonicErrorHandler }]
+  providers: [Restservice,Common, BackgroundMode, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }
