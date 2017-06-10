@@ -34,9 +34,9 @@
         <param name="android-package" value="io.ionic.keyboard.IonicKeyboard" />
         <param name="onload" value="true" />
     </feature>
-    <name>E-TicketvIonic</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <name>Mobile Ticket</name>
+    <description>Mobile application of the Qmatic Orchestra platform for customers.</description>
+    <author email="hi@ionicframework" href="http://ionicframework.com/">SOFT-IT</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />

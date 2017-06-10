@@ -27762,7 +27762,6 @@ page-showticket .ticket-service-name {
   font-size: 20px !important;
   width: 10em !important;
   line-height: 24px;
-  word-break: break-all !important;
   font-weight: 200 !important;
 }
 

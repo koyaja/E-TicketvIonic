@@ -1,3 +1,4 @@
+import { GlobalVars } from './../shared/global';
 import { Common } from './../shared/common';
 import { PrdvPage } from './../pages/prdv/prdv';
 import { ErrorComponent } from './../components/error/error';
@@ -28,6 +29,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 //import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Http } from '@angular/http'
 import { createTranslateLoader } from "./providers/createTranslateLoader";
+import { MobileServer } from "./restservice/mobileserver";
 //import { HttpModule, RequestOptions, XHRBackend } from '@angular/http';
 /*
 const cloudSettings: CloudSettings = {
@@ -103,6 +105,6 @@ const cloudSettings: CloudSettings = {
 
     // PostticketPage
   ],
-  providers: [Restservice,Common, BackgroundMode, { provide: ErrorHandler, useClass: IonicErrorHandler }]
+  providers: [Restservice,MobileServer,Common,GlobalVars, BackgroundMode, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }

@@ -61,7 +61,7 @@
         "okcancel": "Oui"
     },
     "Error": {
-        "errorMessage": "Une erreur s'est produite",
+        "errorMessage": "Problème de connexion",
         "errorButton": "Réessayer",
         "taostMessage": "",
         "loadingMessage": ""

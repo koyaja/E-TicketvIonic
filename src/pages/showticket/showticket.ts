@@ -251,18 +251,17 @@ export class Showticket {
       this.visitinfo = ticketviststatus;
 
       //verifier la connexion
-      if (typeof  this.visitinfo == 'undefined' ) {
+    /*  if (typeof  this.visitinfo == 'undefined' ) {
         console.log('connection perdu')
         this.toastError();
         setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 10000);
         return;
-      }
+      }*/
 
 
       if (this.iscalled) {
         // Verifier le statut pour savoir lorsque le ticket passe au status END
         setTimeout(() => { this.teststatut(ticketviststatus) }, 3000);
-        // setInterval(this.teststatut(ticketviststatus), 3000);
       }
       else {
         //
@@ -282,30 +281,30 @@ export class Showticket {
           });
         })();
 
-        /**Apele de test status */
+        /* Appel de test status */
         setTimeout(() => { this.teststatut(ticketviststatus) }, 3000);
-        // setInterval(this.teststatut(ticketviststatus), 3000);
 
-        //  this.Prosses(this.visitinfo.queueSize)
-        // this.createRange(this.visitinfo.queueSize)
-        // ticketviststatus= this.ticketinfo=ticketviststatus;
-        // var a=data.results
-        /*   this.ticketNumber=ticketinfo.ticketNumber;
-           this.branchId=ticketinfo.branchId;
-           this.queueId=ticketinfo.queueId;
-           this.checksum=ticketinfo.checksum;
-           this.serviceId=ticketinfo.serviceId;
-           this.visitId=ticketinfo.visitId;*/
+
       }
       console.log(ticketviststatus)
       this.iserror = false;
     }, error => {
 
       console.log(error)
+      console.log(' error ===> debug:')
+      console.debug(error)
+
+      // if(error.status==404 && error._body.message==="New visits are not available until visitsOnBranchCache is refreshed"){
+      if(error.status==404 && this.iscalled){
+         this.isticketfinish = true
+      }else{
       this.iserror = true;
-      // alert(error + 'erreur')
-    }
-    )
+      }
+    })
+/*    .catch(error => {
+      console.log('Une erreur est survenue ' + error)
+      console.log(error)
+    })*/
   }
 
 
@@ -355,7 +354,6 @@ export class Showticket {
       console.log('ticket fini' + Viststate)
       this.isticketfinish = true
     } else {
-
 
       if (Viststate.currentStatus === 'IN_QUEUE' && this.istiketpresente) {
         if (this.queueId != Viststate.queueId) {

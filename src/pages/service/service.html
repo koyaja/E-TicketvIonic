@@ -7,10 +7,9 @@
 </ion-header>
 
 <ion-content class="has-header">
-    <div>
+
+    <div *ngIf="!iserror" class="page-content-default">
         <div class="page-message"> {{'Servicepage.nameservice' | translate }}</div>
-    </div>
-    <div *ngIf="!iserror">
         <ion-list>
             <ion-item *ngFor=" let s of Service" class="btn-custom1 round" (click)="itemTaped(s)">
                 <div center>

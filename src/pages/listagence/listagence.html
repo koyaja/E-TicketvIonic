@@ -9,20 +9,15 @@
 </ion-header>
 
 <ion-content class="has-header">
-    <!--<div *ngIf="!iserror">
-    </div>-->
+
     <div *ngIf="!iserror" class="page-content-default">
         <div class="page-message"> {{'ModuleTicketPage.message' | translate }}</div>
         <ion-list>
             <ion-item *ngFor=" let b of branche" class="btn-custom1 round" (click)="itemTaped(b)">
                 <div center>{{b.name}}</div>
             </ion-item>
-
         </ion-list>
     </div>
     <error *ngIf="iserror" (click)="getAgence()"></error>
-    <!-- <div *ngIf="iserror" class="errordiv" id="global">
-        <label> {{'Divers.errortext' | translate }} </label>
-        <button ion-button round (tap)="getAgence()" id="bntq" color="secondary">{{'Divers.errorbuton' | translate }}</button>
-    </div>-->
+
 </ion-content>

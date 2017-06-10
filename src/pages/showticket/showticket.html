@@ -10,94 +10,50 @@
 </ion-header>
 
 <ion-content class="has-header">
-    <div *ngIf="!iscalled && !isticketfinish">
-        <div class="page-message"> {{'Showticketpage.note' | translate}}</div>
-    </div>
-    <div *ngIf="showrang() && !iscalled && !isticketfinish">
-        <div *ngFor="let num of fakeArray; let i = index" class="col center-text queue-itm parent-center" [ngClass]="{ selected:SelctedPosition(num), other:!SelctedPosition(num), animselected:animatePosition(num)}">
-            <div [ngClass]="{'child-center': true, 'center-content' : !hilightSelcted}">
-                <div class="box  ellipsis  reverse-ellipsis content-container-one">
-                    <div class="ellipsis__content">{{num}}
-                        <sup *ngIf="num==1 && SelctedPosition(num)">{{'Showticketpage.position.first' | translate}}</sup>
-                        <sup *ngIf="num>1 && SelctedPosition(num)">{{'Showticketpage.position.other' | translate}}</sup>
+
+    <div *ngIf="!iserror" class="page-content-default">
+        <div *ngIf="!iscalled && !isticketfinish">
+            <div class="page-message"> {{'Showticketpage.note' | translate}}</div>
+        </div>
+
+        <div *ngIf="showrang() && !iscalled && !isticketfinish ">
+            <div *ngFor="let num of fakeArray; let i = index" class="col center-text queue-itm parent-center" [ngClass]="{ selected:SelctedPosition(num), other:!SelctedPosition(num), animselected:animatePosition(num)}">
+                <div [ngClass]="{'child-center': true, 'center-content' : !hilightSelcted}">
+                    <div class="box  ellipsis  reverse-ellipsis content-container-one">
+                        <div class="ellipsis__content">{{num}}
+                            <sup *ngIf="num==1 && SelctedPosition(num)">{{'Showticketpage.position.first' | translate}}</sup>
+                            <sup *ngIf="num>1 && SelctedPosition(num)">{{'Showticketpage.position.other' | translate}}</sup>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div *ngIf="SelctedPosition(num) && num" class="content-container-two">
-                <div class="ellipsis__content">{{'Showticketpage.yourposition' | translate}}</div>
-            </div>
-        </div>
-    </div>
-    <div *ngIf="iscalled && !isticketfinish">
-        <div class="page-message">{{'Showticketpage.yourturn' | translate}} {{guichet}} </div>
-    </div>
-
-
-
-
-
-
-
-    <!-- <div class="button-bar scroll-horiz" *ngFor="let Agence of Agences">
-
-        <a button button-positive id="listhz">{{Agence.ordre}}</a>
-
-
-    </div>
-
-    <ion-item>
-        <ion-scroll scrollX style="height: 50px;" class="ion-scroll">
-            <ion-list>
-                <ion-item *ngFor="let Agence of Agences">
-                    <h1>{{Agence.ordre}}</h1>
-                </ion-item>
-            </ion-list>
-        </ion-scroll>
-    </ion-item>
-    -->
-    <!--  <ion-list scroll="false">
-        <ion-item>
-
-            <ion-scroll id="scrolll" *ngFor="let Agence of Agences let i=index">
-                {{Agence.ordre}}
-                <div *ngFor="let Agence of Agences let i=index" style='display: inline-block; margin: 10px; background-color: red'>
-                    <ion-icon name="ios-arrow-forward-outline" class="icon-right"></ion-icon>
-                    <i style='font-size: 30px;'></i> {{Agence.ordre}}
-                    <br>
-                    <br>
+                <div *ngIf="SelctedPosition(num) && num" class="content-container-two">
+                    <div class="ellipsis__content">{{'Showticketpage.yourposition' | translate}}</div>
                 </div>
-            </ion-scroll>
-        </ion-item>
-    </ion-list>
-    <div>
-        <ion-navbar>
-            <button> </button>
-
-        </ion-navbar>
-        <span id="txt"> {{sernam}}</span>
-        <div id="pa" class="content">
-
-            <label id="num">
-    {{ticnum}}
-   </label>
+            </div>
         </div>
-    </div>-->
 
-    <div *ngIf="!isticketfinish" class="ticket_container ticket_info parent-center parent-center:before">
-        <div class="child-center">
-            <div class="fadeIn ticket-text ticket-size-1 ticket_nmbr"> {{ticketNumber}}</div>
-            <div class="ticket-service-name"> {{sernam}} </div>
+        <div *ngIf="iscalled && !isticketfinish">
+            <div class="page-message">{{'Showticketpage.yourturn' | translate}} {{guichet}} </div>
+        </div>
+
+        <div *ngIf="!isticketfinish" class="ticket_container ticket_info parent-center parent-center:before">
+            <div class="child-center">
+                <div class="fadeIn ticket-text ticket-size-1 ticket_nmbr"> {{ticketNumber}}</div>
+                <div class="ticket-service-name"> {{sernam}} </div>
+            </div>
+        </div>
+
+        <button *ngIf="!iscalled" ion-button color="danger" round id="bntq" (tap)='Cancelvisite()'>{{'Showticketpage.cancelviste' | translate}}</button>
+
+        <div *ngIf="isticketfinish">
+            <div class="page-message"> {{'Showticketpage.ticketEndMessage' | translate }}</div>
+            <button ion-button round (tap)="home()" class="btn-default" color="secondary">{{'Showticketpage.okbtn' | translate}}</button>
+            <!--  <button ion-button class="new" (tap)="home()">{{'Showticketpage.okbtn' | translate}}</button>-->
         </div>
     </div>
-    <button *ngIf="!iscalled" ion-button color="danger" round id="bntq" (tap)='Cancelvisite()'>{{'Showticketpage.cancelviste' | translate}}</button>
 
     <error *ngIf="iserror && !isticketfinish" (click)="gevisitstatus(branchId, visitId,checksum);"></error>
 
-    <div *ngIf="isticketfinish">
-        <div class="page-message"> {{'Showticketpage.ticketEndMessage' | translate }}</div>
-        <button ion-button round (tap)="home()" class="btn-default" color="secondary">{{'Showticketpage.okbtn' | translate}}</button>
-        <!--  <button ion-button class="new" (tap)="home()">{{'Showticketpage.okbtn' | translate}}</button>-->
-    </div>
     <!-- <div *ngIf="isticketfinish">
         <div class="fvisit">
 
