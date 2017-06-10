@@ -13,6 +13,7 @@ import { Restservice } from '../../app/restservice/restservice'
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { Platform } from 'ionic-angular';
+import { AppMinimize } from '@ionic-native/app-minimize';
 @Component({
   selector: 'page-showticket',
   templateUrl: 'showticket.html',
@@ -78,7 +79,7 @@ export class Showticket {
   text: string = "cool";
 
 
-  constructor(private toastCtrl: ToastController, public translate: TranslateService, private platform: Platform, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public navCtrl: NavController, private restservice: Restservice, private navParams: NavParams, public loadingCtrl: LoadingController, private alertCtrl: AlertController) {
+  constructor(/*private appMinimize: AppMinimize,*/private toastCtrl: ToastController, public translate: TranslateService, private platform: Platform, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public navCtrl: NavController, private restservice: Restservice, private navParams: NavParams, public loadingCtrl: LoadingController, private alertCtrl: AlertController) {
 
     this.presentLoadingDefault();
     this.idser = navParams.get('id');
@@ -94,20 +95,25 @@ export class Showticket {
       }
       //
     }*/
-    this.platform.registerBackButtonAction(() => {
-      console.log('go back')
-      if (this.istiketpresente === true) {
-        this.backgroundMode.enable();
-        this.presentToast();
-        console.log("ticketinfo")
-      } else {
-        console.log("exte")
-        this.platform.exitApp();
-      }
+    // this.platform.registerBackButtonAction(() => {
+    //   console.log('go back')
+    //   this.appMinimize.minimize().then(
+    //     success => console.log('Closed'),
+    //     err => console.log('Something went wrong')
+    //   );
 
-      //
+    //  /* if (this.istiketpresente === true) {
+    //     this.backgroundMode.enable();
+    //     this.presentToast();
+    //     console.log("ticketinfo")
+    //   } else {
+    //     console.log("exte")
+    //     this.platform.exitApp();
+    //   }*/
 
-    }, 200);
+    //   //
+
+    // }, 200);
     this.chargeTranslate();
 
   }

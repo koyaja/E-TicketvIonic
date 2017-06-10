@@ -1,3 +1,4 @@
+import { AppMinimize } from '@ionic-native/app-minimize';
 import {HomePage }from './../pages/home/home';
 import {Component }from '@angular/core';
 import {Platform }from 'ionic-angular';
@@ -27,11 +28,30 @@ export class MyApp {
 rootPage = HomePage;
 
 
-constructor(platform:Platform, private storage:Storage, private translate:TranslateService, private mobileServer:MobileServer,private globalvars:GlobalVars) {
+constructor(platform:Platform, private storage:Storage, private translate:TranslateService, private mobileServer:MobileServer,private globalvars:GlobalVars,private appMinimize: AppMinimize) {
 /**chargement de la translation  */
   this.translateConfig();
   this.initConfig();
   platform.ready().then(() =>  {
+    platform.registerBackButtonAction(() => {
+      console.log('go back')
+      this.appMinimize.minimize().then(
+        success => console.log('Closed'),
+        err => console.log('Something went wrong')
+      );
+
+     /* if (this.istiketpresente === true) {
+        this.backgroundMode.enable();
+        this.presentToast();
+        console.log("ticketinfo")
+      } else {
+        console.log("exte")
+        this.platform.exitApp();
+      }*/
+
+      //
+
+    }, 200);
   StatusBar.styleDefault();
   Splashscreen.hide();
   });

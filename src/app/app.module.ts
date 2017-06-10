@@ -30,6 +30,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { Http } from '@angular/http'
 import { createTranslateLoader } from "./providers/createTranslateLoader";
 import { MobileServer } from "./restservice/mobileserver";
+import { AppMinimize } from '@ionic-native/app-minimize';
+
 //import { HttpModule, RequestOptions, XHRBackend } from '@angular/http';
 /*
 const cloudSettings: CloudSettings = {
@@ -105,6 +107,6 @@ const cloudSettings: CloudSettings = {
 
     // PostticketPage
   ],
-  providers: [Restservice,MobileServer,Common,GlobalVars, BackgroundMode, { provide: ErrorHandler, useClass: IonicErrorHandler }]
+  providers: [Restservice, MobileServer, Common, GlobalVars, BackgroundMode, AppMinimize, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }

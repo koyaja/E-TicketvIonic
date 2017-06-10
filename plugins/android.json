@@ -41,6 +41,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "bj.softit.eticket"
+        },
+        "cordova-plugin-appminimize": {
+            "PACKAGE_NAME": "bj.softit.eticket"
         }
     },
     "dependent_plugins": {

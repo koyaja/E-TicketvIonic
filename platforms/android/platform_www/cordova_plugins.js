@@ -98,6 +98,14 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "id": "cordova-plugin-appminimize.AppMinimize",
+        "file": "plugins/cordova-plugin-appminimize/www/AppMinimize.js",
+        "pluginId": "cordova-plugin-appminimize",
+        "clobbers": [
+            "cordova.plugins.appMinimize"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -115,7 +123,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.1",
     "cordova-sqlite-storage": "2.0.2",
     "de.appplant.cordova.plugin.local-notification": "0.8.4",
-    "ionic-plugin-keyboard": "2.2.1"
+    "ionic-plugin-keyboard": "2.2.1",
+    "cordova-plugin-appminimize": "1.0"
 };
 // BOTTOM OF METADATA
 });
