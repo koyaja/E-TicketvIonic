@@ -1,3 +1,4 @@
+//custom for moov
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/v2/theming/
 $font-path: "../assets/fonts";
@@ -15,7 +16,8 @@ $font-path: "../assets/fonts";
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
-$colors: ( primary:rgba(131, 20, 48, 255), secondary: rgba(248, 248, 248, 0.75), danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
+$colors: ( primary:rgba(106, 151, 24, 255), secondary: rgba(248, 248, 248, 0.75), danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
+//$colors: ( primary:rgba(131, 20, 48, 255), secondary: rgba(248, 248, 248, 0.75), danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
 //$colors: ( primary:rgba(100, 100, 100, 255), secondary: rgba(248, 248, 248, 0.75), danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
 // App iOS Variables
 //primary : #387ef5
@@ -45,7 +47,8 @@ $colors: ( primary:rgba(131, 20, 48, 255), secondary: rgba(248, 248, 248, 0.75),
 @import "noto-sans";
 // background page
 .has-header {
-    background-image: url(../assets/icon/background.jpg);
+    background-image: url(../assets/icon/backetisalat.png);
+    //  background-image: url(../assets/icon/backgroudmoov.png);
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center; //  background-size: contain;
@@ -142,10 +145,11 @@ $colors: ( primary:rgba(131, 20, 48, 255), secondary: rgba(248, 248, 248, 0.75),
     margin: 1em auto !important;
     text-align: center !important;
     font-size: 1.5em !important;
-    color: black !important;
-    background-color: rgba(248, 248, 248, 0.75) !important;
+    color: white !important;
+    background-color: rgba(106, 151, 24, 0.85) !important;
     width: 85% !important;
     font-weight: lighter !important;
+    border-radius: 0 64px 64px !important;
 }
 
 .btn-custom1[icon-right] ion-icon {
@@ -159,7 +163,7 @@ $colors: ( primary:rgba(131, 20, 48, 255), secondary: rgba(248, 248, 248, 0.75),
 
 ion-item.btn-custom1.round {
     padding: 0.5em 1em!important;
-    border-radius: 64px;
+    //border-radius: 0 64px 64px;
 }
 
 .sube-title {
@@ -182,7 +186,7 @@ ion-item.btn-custom1.round {
     padding: 0.25em;
     margin: 0.5em auto;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 *[no-padding] {

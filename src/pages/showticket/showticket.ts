@@ -57,12 +57,6 @@ export class Showticket {
   public timer;
   loading: any;
   visitinfo: VisitStatusEntity = new VisitStatusEntity()
-  /**Time manupule  */
-
-  // private timerStart = 10 * 60 * 1000; //minutes
-  //private timerGap = 1000;
-  //private countDownreTimersource;
-  //private serviceFecthTimerResource
   tab: Array<any> = []
   items: number[] = [];
   fakeArray = new Array(1);
@@ -79,7 +73,7 @@ export class Showticket {
   text: string = "cool";
 
 
-  constructor(/*private appMinimize: AppMinimize,*/private toastCtrl: ToastController, public translate: TranslateService, private platform: Platform, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public navCtrl: NavController, private restservice: Restservice, private navParams: NavParams, public loadingCtrl: LoadingController, private alertCtrl: AlertController) {
+  constructor(private appMinimize: AppMinimize,private toastCtrl: ToastController, public translate: TranslateService, private platform: Platform, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public navCtrl: NavController, private restservice: Restservice, private navParams: NavParams, public loadingCtrl: LoadingController, private alertCtrl: AlertController) {
 
     this.presentLoadingDefault();
     this.idser = navParams.get('id');
@@ -88,55 +82,34 @@ export class Showticket {
     this.sernam = navParams.get('sernam');
     this.getvisit(this.idser, this.idbr);
     this.backgroundMode.enable();
-    /*if (this.visitId != null) {
-      while (true) {
-        console.log("check");
-        this.gevisitstatus(this.branchId, this.visitId, this.checksum);
-      }
+
+    this.platform.registerBackButtonAction(() => {
+      console.log('go back')
+      this.appMinimize.minimize().then(
+        success => console.log('Closed'),
+        err => console.log('Something went wrong')
+      );
+
+     /* if (this.istiketpresente === true) {
+        this.backgroundMode.enable();
+        this.presentToast();
+        console.log("ticketinfo")
+      } else {
+        console.log("exte")
+        this.platform.exitApp();
+      }*/
+
       //
-    }*/
-    // this.platform.registerBackButtonAction(() => {
-    //   console.log('go back')
-    //   this.appMinimize.minimize().then(
-    //     success => console.log('Closed'),
-    //     err => console.log('Something went wrong')
-    //   );
 
-    //  /* if (this.istiketpresente === true) {
-    //     this.backgroundMode.enable();
-    //     this.presentToast();
-    //     console.log("ticketinfo")
-    //   } else {
-    //     console.log("exte")
-    //     this.platform.exitApp();
-    //   }*/
-
-    //   //
-
-    // }, 200);
+    }, 200);
     this.chargeTranslate();
 
   }
 
   ngOnInit() {
-    if (this.visitId != null) {
-      //
-      console.log('init')
-    }
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    // this.getAgence();
-  }/**
-  AfterViewInit() {
-    if (this.visitId != null) {
-      while (true) {
-        console.log("check");
-        this.gevisitstatus(this.branchId, this.visitId, this.checksum);
-      }
-      //
-    }
 
-  }*/
+
+  }
 
   /*async sayText():Promise<any>{
     try{
@@ -150,11 +123,10 @@ export class Showticket {
       console.log(e);
     }
   }*/
+  //creer la visite (ticket)
   getvisit(idser, idbr) {
-
-    console.log("point 2 showticketPage");
+    console.log("Showticket.getvisit ");
     this.restservice.creatvisit(idser, idbr).subscribe(ticketinfo => {
-
       console.log('data showticket ' + ticketinfo)
       ticketinfo = this.ticketinfo = ticketinfo;
       // var a=data.results
@@ -182,6 +154,7 @@ export class Showticket {
 
   /**pop retour */
   Cancelvisite() {
+    console.log("Showticket.Cancelvisite ");
     this.istiketpresente = false;
     let alert = this.alertCtrl.create({
       title: this.titlecancel,
@@ -192,7 +165,7 @@ export class Showticket {
           role: 'cancel',
           handler: () => {
             this.istiketpresente = true;
-            setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 5000);
+            setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 3000);
             console.log('Cancel clicked');
           }
         },
@@ -210,33 +183,8 @@ export class Showticket {
     alert.present();
     //this.navCtrl.pop();
   }
-  /**Queut fonction
-  public hilightSelctedPosition(): boolean {
-    if (this.index1 === this.visitPosition) {
-      return true;
-    }
-    return false;
-  }
-  public isEmptyQueueItem(): boolean {
-    return !(this.index1 > 0);
-  }
 
-
-  public getQueueindex1(): any {
-    if (this.hilightSelctedPosition()) {
-      return this.index1;
-    }
-    return this.trimindex1(this.index1);
-  }
-
-  public trimindex1(index1: number): any {
-    if (index1 && index1.toString().length > 3) {
-      let a = index1.toString().substr((index1.toString().length - 2), (index1.toString().length));
-      return '.' + a;
-    }
-    return index1;
-  }
-  */
+  //Animation des positions
   public animatePosition(index): boolean {
     if (this.hilightSelcted && index !== this.visitPosition) {
       return false;
@@ -250,10 +198,9 @@ export class Showticket {
 
   /** fonction etat visite */
   gevisitstatus(idbr, idse, cheksum) {
-    console.log("get visite state");
+   console.log("Showticket.gevisitstatus ");
 
     this.restservice.getcurentvisitstat(idbr, idse, cheksum).then(ticketviststatus => {
-
       this.visitinfo = ticketviststatus;
 
       //verifier la connexion

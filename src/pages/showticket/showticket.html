@@ -52,13 +52,14 @@
         </div>
     </div>
 
-    <error *ngIf="iserror && !isticketfinish" (click)="gevisitstatus(branchId, visitId,checksum);"></error>
+    <error *ngIf="iserror && !isticketfinish" (click)="gevisitstatus(branchId, visitId,checksum);">
+    </error>
 
     <!-- <div *ngIf="isticketfinish">
         <div class="fvisit">
 
             <label class="labfin center">
-    Merci Pour votre visite
+              Merci Pour votre visite
            </label>
 
             <ion-range min="0" max="10" pin="true" step="1" snaps="true" [(ngModel)]="text">

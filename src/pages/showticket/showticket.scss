@@ -209,13 +209,14 @@ page-showticket {
         text-align: -webkit-center;
     }
     .queue-itm.selected {
-        background: white;
+        background: rgba(106, 151, 24, 255); //cutom moov
         //  font-weight: 500;
         font-size: 17px;
         width: 12vw;
         height: 12vw;
         max-width: 50px;
         max-height: 50px;
+        color: white; //custom moov
         display: inline-table;
     }
     .queue-itm.animselected {

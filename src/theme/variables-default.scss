@@ -1,0 +1,219 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+$font-path: "../assets/fonts";
+@import "ionic.globals";
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+$colors: ( primary:rgba(131, 20, 48, 255), secondary: rgba(248, 248, 248, 0.75), danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
+//$colors: ( primary:rgba(100, 100, 100, 255), secondary: rgba(248, 248, 248, 0.75), danger: #f53d3d, light: #f4f4f4, dark: #222, tabbar: #1f7998);
+// App iOS Variables
+//primary : #387ef5
+// --------------------------------------------------
+// iOS only Sass variables can go here
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+@import "ionic.theme.default";
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+@import "ionic.ionicons";
+// Fonts
+// --------------------------------------------------
+@import "roboto";
+@import "noto-sans";
+// background page
+.has-header {
+    background-image: url(../assets/icon/background.jpg);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center; //  background-size: contain;
+    //background-color: red !important;
+}
+
+//btn accueil
+
+/*.btnhome {
+    // margin: 20px auto;
+    display: block;
+    size: 50px;
+    padding: 10px auto 10px auto;
+    margin: -1px auto;
+    width: 85%;
+    height: 78px;
+    text-align: center;
+    font-size: 15px;
+    //  background-color: transparent !important;
+    //   font-family: 'Nanami-Rounded-Medium';
+    color: black;
+    // color: white !important;
+    background-color: rgba(248, 248, 248, 0.75);
+    //font-size-adjust: 0.58;
+    //text-align: left;
+    // padding-right:10px;
+    // margin: 10px 10px 10px 10px;
+    // word-break: break-all !important;
+    //font-weight: 200 !important;
+    line-height: 24px;
+    word-break: break-all !important;
+    font-weight: 200 !important;
+}*/
+
+// gestion erreur css
+.page-content-error {
+    //  display: inline-block;
+    // display: table-cell;
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    padding: 25px;
+    display: block;
+}
+
+.page-content-error .message-error {
+    text-align: center;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding: auto;
+    align-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+.laberror {
+    font-size: 20px;
+    color: white;
+}
+
+.btn-default {
+    display: block !important;
+    padding: 1.625em !important;
+    margin: 1em auto !important;
+    /* width: 250px; */
+    font-family: Helvetica;
+    font-weight: lighter !important;
+}
+
+#global {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+
+/*entete
+.titre {
+    display: block;
+    font-size: 20px;
+    padding: 10px auto;
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+    background: transparent !important;
+    //  font-family: 'Nanami-Rounded-Medium'
+}*/
+
+.btn-custom1 {
+    display: block !important;
+    padding: 1.5em 0.5em !important;
+    margin: 1em auto !important;
+    text-align: center !important;
+    font-size: 1.5em !important;
+    color: black !important;
+    background-color: rgba(248, 248, 248, 0.75) !important;
+    width: 85% !important;
+    font-weight: lighter !important;
+}
+
+.btn-custom1[icon-right] ion-icon {
+    line-height: 1 !important;
+    padding-left: 0 !important;
+}
+
+.btn-custom1 .label-md {
+    margin: 0;
+}
+
+ion-item.btn-custom1.round {
+    padding: 0.5em 1em!important;
+    border-radius: 64px;
+}
+
+.sube-title {
+    // color: white;
+    //  padding-left: 12px;
+    font-weight: lighter!important;
+    font-size: 14px !important;
+}
+
+#sube-title {
+    // color: white;
+    //  padding-left: 12px;
+    font-weight: lighter!important;
+    font-size: 14px !important;
+}
+
+.page-message {
+    display: block;
+    font-size: 20px;
+    padding: 0.25em;
+    margin: 0.5em auto;
+    text-align: center;
+    color: white;
+}
+
+*[no-padding] {
+    padding: 0px !important;
+}
+
+*[text-ellipsis] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/***************************************************************************
+Bootstap Customization
+ ***************************************************************************/
+
+.toolbar-title {
+    display: -webkit-box !important;
+}
+
+.list-md .item-block .item-inner {
+    border-bottom: none !important;
+}
+
+.ios ion-nav>.ion-page>ion-header>.toolbar.statusbar-padding:first-child ion-title {
+    height: inherit !important;
+    min-height: inherit !important;
+    padding: 0 !important;
+}
+
+.toolbar-title-ios.toolbar-title {
+    display: inline-block !important;
+}

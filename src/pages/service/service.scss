@@ -86,17 +86,12 @@ page-service {
         margin-left: auto;
         margin-right: 10px;
         display: block;
+        font-size: 25px; //custome moov
     }
     .customer-icon {
-        width: 20px;
+        width: 30px; //custom moov
         vertical-align: sub;
-        stroke: #303030;
-        padding: 1px;
-    }
-    .customer-icon {
-        width: 20px;
-        vertical-align: sub;
-        stroke: #303030;
+        stroke: #fff; //custom moov
         padding: 1px;
     }
     .tick-container {

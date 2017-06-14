@@ -33,25 +33,25 @@ constructor(platform:Platform, private storage:Storage, private translate:Transl
   this.translateConfig();
   this.initConfig();
   platform.ready().then(() =>  {
-    platform.registerBackButtonAction(() => {
-      console.log('go back')
-      this.appMinimize.minimize().then(
-        success => console.log('Closed'),
-        err => console.log('Something went wrong')
-      );
+    // platform.registerBackButtonAction(() => {
+    //   console.log('go back')
+    //   this.appMinimize.minimize().then(
+    //     success => console.log('Closed'),
+    //     err => console.log('Something went wrong')
+    //   );
 
-     /* if (this.istiketpresente === true) {
-        this.backgroundMode.enable();
-        this.presentToast();
-        console.log("ticketinfo")
-      } else {
-        console.log("exte")
-        this.platform.exitApp();
-      }*/
+    //  /* if (this.istiketpresente === true) {
+    //     this.backgroundMode.enable();
+    //     this.presentToast();
+    //     console.log("ticketinfo")
+    //   } else {
+    //     console.log("exte")
+    //     this.platform.exitApp();
+    //   }*/
 
-      //
+    //   //
 
-    }, 200);
+    // }, 200);
   StatusBar.styleDefault();
   Splashscreen.hide();
   });
@@ -71,7 +71,7 @@ translateConfig() {
 
 /**requete de check serveur mobile pour la recuperation l'adresse api getway */
   initConfig() {
-    var useMobileServer=true;
+    var useMobileServer=false;
     if(useMobileServer) {
       //Recupere les infos de l'API getway sur le mobile serveur
       this.mobileServer.getApiGetWayInfo().subscribe(api=>{
