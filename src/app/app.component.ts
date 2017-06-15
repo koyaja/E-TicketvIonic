@@ -92,9 +92,10 @@ translateConfig() {
     } else {
       // Url direct de l'API Gateway
       this.globalvars.setUrl('http://192.168.0.137:9090/MobileTicket/')
- this.globalvars.setClient("Moov Bénin");
-      // Url proxy de l'API Gateway en mode developpement
-     this.globalvars.setUrl('/api/')
+      this.globalvars.setClient("SOFT-IT");
+    //this.globalvars.setClient("Moov Bénin");
+    // Url proxy de l'API Gateway en mode developpement
+    //  this.globalvars.setUrl('/api/')
 
 
 
