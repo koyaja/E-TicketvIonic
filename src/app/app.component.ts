@@ -29,7 +29,7 @@ export class MyApp {
 rootPage = HomePage;
 
 selectedTheme: String;
-constructor(platform:Platform, private storage:Storage, private translate:TranslateService, private mobileServer:MobileServer,private globalvars:GlobalVars,private appMinimize: AppMinimize,
+constructor(platform:Platform, private storage:Storage, private translate:TranslateService, private mobileServer:MobileServer,private globalvars:GlobalVars,
 private settings:Settings) {
 //Chargement du theme
   this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
@@ -37,25 +37,7 @@ private settings:Settings) {
   this.translateConfig();
   this.initConfig();
   platform.ready().then(() =>  {
-    platform.registerBackButtonAction(() => {
-      console.log('go back')
-      this.appMinimize.minimize().then(
-        success => console.log('Closed'),
-        err => console.log('Something went wrong')
-      );
 
-     /* if (this.istiketpresente === true) {
-        this.backgroundMode.enable();
-        this.presentToast();
-        console.log("ticketinfo")
-      } else {
-        console.log("exte")
-        this.platform.exitApp();
-      }*/
-
-      //
-
-    }, 200);
   StatusBar.styleDefault();
   Splashscreen.hide();
   });
