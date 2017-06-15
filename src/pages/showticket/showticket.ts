@@ -1,3 +1,4 @@
+import { GlobalVars } from './../../shared/global';
 import { HomePage } from './../home/home';
 import { ToastController } from 'ionic-angular/components/toast/toast';
 import { TimerObservable } from 'rxjs/observable/TimerObservable';
@@ -77,10 +78,11 @@ export class Showticket {
   cancelbuttoncancel: string = "Non";
   messagecancel: string = "Voulez vous  annuler la visite";
   text: string = "cool";
+  client?:string;
 
 
-  constructor(/*private appMinimize: AppMinimize,*/private toastCtrl: ToastController, public translate: TranslateService, private platform: Platform, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public navCtrl: NavController, private restservice: Restservice, private navParams: NavParams, public loadingCtrl: LoadingController, private alertCtrl: AlertController) {
-
+  constructor(private appMinimize: AppMinimize,private toastCtrl: ToastController, public translate: TranslateService, private platform: Platform, private backgroundMode: BackgroundMode, private localNotifications: LocalNotifications, public navCtrl: NavController, private restservice: Restservice, private navParams: NavParams, public loadingCtrl: LoadingController, private alertCtrl: AlertController) {
+    this.client=GlobalVars.getClient()
     this.presentLoadingDefault();
     this.idser = navParams.get('id');
     this.idbr = navParams.get('idbr');
@@ -95,25 +97,25 @@ export class Showticket {
       }
       //
     }*/
-    // this.platform.registerBackButtonAction(() => {
-    //   console.log('go back')
-    //   this.appMinimize.minimize().then(
-    //     success => console.log('Closed'),
-    //     err => console.log('Something went wrong')
-    //   );
+    this.platform.registerBackButtonAction(() => {
+      console.log('go back')
+      this.appMinimize.minimize().then(
+        success => console.log('Closed'),
+        err => console.log('Something went wrong')
+      );
 
-    //  /* if (this.istiketpresente === true) {
-    //     this.backgroundMode.enable();
-    //     this.presentToast();
-    //     console.log("ticketinfo")
-    //   } else {
-    //     console.log("exte")
-    //     this.platform.exitApp();
-    //   }*/
+     /* if (this.istiketpresente === true) {
+        this.backgroundMode.enable();
+        this.presentToast();
+        console.log("ticketinfo")
+      } else {
+        console.log("exte")
+        this.platform.exitApp();
+      }*/
 
-    //   //
+      //
 
-    // }, 200);
+    }, 200);
     this.chargeTranslate();
 
   }
@@ -123,20 +125,8 @@ export class Showticket {
       //
       console.log('init')
     }
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    // this.getAgence();
-  }/**
-  AfterViewInit() {
-    if (this.visitId != null) {
-      while (true) {
-        console.log("check");
-        this.gevisitstatus(this.branchId, this.visitId, this.checksum);
-      }
-      //
-    }
 
-  }*/
+  }
 
   /*async sayText():Promise<any>{
     try{
@@ -169,7 +159,7 @@ export class Showticket {
       console.log(ticketinfo)
 
       if (this.visitId != null) {
-        setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 3000);
+        setTimeout(() => { this.gevisitstatus(this.branchId, this.visitId, this.checksum) }, 1000);
       }
       this.loadingfinish();
       console.log(ticketinfo)

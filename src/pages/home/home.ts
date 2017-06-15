@@ -1,3 +1,4 @@
+import { GlobalVars } from './../../shared/global';
 import { PrdvPage } from './../prdv/prdv';
 import { PopoverPage } from './../popover/popover';
 //import { ServicePage } from './../service/service';
@@ -17,9 +18,9 @@ import {TranslateService} from '@ngx-translate/core';
 
 })
 export class HomePage {
-
+client:string
   constructor(public navCtrl: NavController,translate: TranslateService,public popoverCtrl: PopoverController) {
-
+this.client=GlobalVars.getClient();
   }
  private passnew(){
 this.navCtrl.push(ListagencePage);

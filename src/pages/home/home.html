@@ -1,8 +1,8 @@
 <ion-header>
-
-    <ion-navbar color='primary'>
-        <ion-toolbar color='primary'>
+    <ion-navbar color='primary_'>
+        <ion-toolbar>
             <ion-title> {{'Homepage.titles' | translate }}</ion-title>
+            <div class="sub-title toolbar-title-md toolbar-title"> {{client}} </div>
             <ion-buttons end>
                 <button ion-button icon-only (click)="presentPopover($event)">
                     <ion-icon name="more" item-right ></ion-icon>

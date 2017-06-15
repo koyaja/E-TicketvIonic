@@ -1,3 +1,4 @@
+import { Settings } from './../providers/settings';
 import { GlobalVars } from './../shared/global';
 import { Common } from './../shared/common';
 import { PrdvPage } from './../pages/prdv/prdv';
@@ -107,6 +108,6 @@ const cloudSettings: CloudSettings = {
 
     // PostticketPage
   ],
-  providers: [Restservice, MobileServer, Common, GlobalVars, BackgroundMode, AppMinimize, { provide: ErrorHandler, useClass: IonicErrorHandler }]
+  providers: [Settings,Restservice, MobileServer, Common, GlobalVars, BackgroundMode, AppMinimize, { provide: ErrorHandler, useClass: IonicErrorHandler }]
 })
 export class AppModule { }

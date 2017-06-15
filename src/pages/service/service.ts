@@ -1,6 +1,7 @@
+import { GlobalVars } from './../../shared/global';
 import { ToastController } from 'ionic-angular/components/toast/toast';
 
-  import { Http,Headers,RequestOptions } from '@angular/http';
+  import { Http } from '@angular/http';
   import { Component } from '@angular/core';
   import { NavController,NavParams,LoadingController,AlertController } from 'ionic-angular';
   import {Showticket}  from'../showticket/showticket'
@@ -18,13 +19,15 @@ import { ToastController } from 'ionic-angular/components/toast/toast';
   Service:Array<any>;
   brancheName?:string ;
    loading: any;
+   client?:string;
    iserror: boolean = false;
   id:number;
     constructor(private toastCtrl: ToastController,public loadingCtrl: LoadingController,private navParams: NavParams,public navCtrl: NavController,public alertCtrl: AlertController, private restservice:Restservice,private http:Http) {
-this.id=navParams.get('id');
-this.brancheName=navParams.get('name');
-console.log("this.id "+this.id);
-this.getService(this.id);
+      this.client=GlobalVars.getClient()
+      this.id=navParams.get('id');
+      this.brancheName=navParams.get('name');
+      console.log("this.id "+this.id);
+      this.getService(this.id);
     }
 
     ngOnInit() {

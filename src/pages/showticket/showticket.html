@@ -1,10 +1,9 @@
-<ion-header color='primary'>
-    <ion-navbar color='primary'>
-        <ion-toolbar color='primary'>
-            <ion-title>
-                <!--  {{'Showticketpage.namepage' | translate}} -->
-                {{branchename}}
-            </ion-title>
+<ion-header>
+    <ion-navbar color='primary_'>
+        <ion-toolbar>
+            <!--<ion-title>{{branchename}}</ion-title>-->
+            <ion-title> {{'ModuleTicketPage.title' | translate }} </ion-title>
+            <div class="sub-title toolbar-title-md toolbar-title">{{client}} {{branchename}} </div>
         </ion-toolbar>
     </ion-navbar>
 </ion-header>
@@ -43,7 +42,7 @@
             </div>
         </div>
 
-        <button *ngIf="!iscalled" ion-button color="danger" round id="bntq" (tap)='Cancelvisite()'>{{'Showticketpage.cancelviste' | translate}}</button>
+        <button *ngIf="!iscalled" ion-button color="danger" round class="cancel-visit" (tap)='Cancelvisite()'>{{'Showticketpage.cancelviste' | translate}}</button>
 
         <div *ngIf="isticketfinish">
             <div class="page-message"> {{'Showticketpage.ticketEndMessage' | translate }}</div>

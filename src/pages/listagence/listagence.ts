@@ -1,3 +1,4 @@
+import { GlobalVars } from './../../shared/global';
 //import { ErrorComponent } from './../../components/error/error';
 import { ToastController } from 'ionic-angular/components/toast/toast';
 import { Component } from '@angular/core';
@@ -19,10 +20,16 @@ export class ListagencePage {
   branche: Array<any>;
   loading: any;
   ecoute: boolean = false;
-   iserror: boolean = false;
+  iserror: boolean = false;
+  client:string
 
-
-  constructor(private toastCtrl: ToastController,public loadingCtrl: LoadingController, public navCtrl: NavController, public alertCtrl: AlertController, private restservice: Restservice, private http: Http) {
+  constructor(private toastCtrl: ToastController,
+   public loadingCtrl: LoadingController,
+   public navCtrl: NavController,
+   public alertCtrl: AlertController,
+   private restservice: Restservice,
+   private http: Http) {
+    this.client=GlobalVars.getClient()
 
   }
 

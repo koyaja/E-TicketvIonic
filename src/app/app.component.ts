@@ -1,3 +1,4 @@
+import { Settings } from './../providers/settings';
 import { AppMinimize } from '@ionic-native/app-minimize';
 import {HomePage }from './../pages/home/home';
 import {Component }from '@angular/core';
@@ -27,8 +28,11 @@ export class MyApp {
 
 rootPage = HomePage;
 
-
-constructor(platform:Platform, private storage:Storage, private translate:TranslateService, private mobileServer:MobileServer,private globalvars:GlobalVars,private appMinimize: AppMinimize) {
+selectedTheme: String;
+constructor(platform:Platform, private storage:Storage, private translate:TranslateService, private mobileServer:MobileServer,private globalvars:GlobalVars,private appMinimize: AppMinimize,
+private settings:Settings) {
+//Chargement du theme
+  this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
 /**chargement de la translation  */
   this.translateConfig();
   this.initConfig();
@@ -71,7 +75,7 @@ translateConfig() {
 
 /**requete de check serveur mobile pour la recuperation l'adresse api getway */
   initConfig() {
-    var useMobileServer=true;
+    var useMobileServer=false;
     if(useMobileServer) {
       //Recupere les infos de l'API getway sur le mobile serveur
       this.mobileServer.getApiGetWayInfo().subscribe(api=>{
@@ -79,6 +83,7 @@ translateConfig() {
         this.globalvars.setUrl(api.apigetwayurl);
         this.storage.set('url', api.apigetwayurl);
         this.storage.set('client', api.name);
+        this.globalvars.setClient(api.name);
         console.log('MyApp.getconfig ');
 
       },error=>{
@@ -86,10 +91,13 @@ translateConfig() {
       })
     } else {
       // Url direct de l'API Gateway
-      //this.globalvars.setUrl('http://192.168.0.137:9090/MobileTicket/')
-
+      this.globalvars.setUrl('http://192.168.0.137:9090/MobileTicket/')
+ this.globalvars.setClient("Moov Bénin");
       // Url proxy de l'API Gateway en mode developpement
-      this.globalvars.setUrl('/api/')
+     this.globalvars.setUrl('/api/')
+
+
+
     }
 
   }
